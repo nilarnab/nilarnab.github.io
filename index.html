@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AOS library-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- place for font awesome-->
+    <script src="https://kit.fontawesome.com/8fedbb90c1.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            scroll-behavior: smooth;
+        }
+
+        .back_left {
+            background-image: url('./img/nilar@nico.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            transform: scale(1.2);
+        }
+
+        .back_right {
+            z-index: 9;
+            background-color: rgb(0, 1, 2);
+            height: 100%;
+            width: 60%;
+            float: right;
+            opacity: 0.8;
+        }
+
+        .text_container {
+            height: 100%;
+            width: 60%;
+            opacity: 0.9;
+            font-size: 50px;
+            font-family: 'arial';
+            float: right;
+            color: white;
+            background-color: black;
+            text-align: left;
+
+        }
+
+        .text {
+            margin: 10%;
+            margin-left: 20px;
+        }
+
+        #nav {
+            font-size: large;
+            text-align: center;
+            justify-content: center;
+            margin-right: 10%;
+            margin-left: 20px;
+        }
+
+        .text>h1 {
+            font-size: 100px;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .text>p {
+            font-size: 30px;
+            color: rgb(190, 190, 190);
+        }
+
+        .text>h3 {
+            font-size: 70px;
+            color: rgb(190, 190, 190);
+        }
+
+        .slide1 {
+            height: 100%;
+            width: 100%;
+            color: white;
+            overflow: hidden;
+        }
+
+        .slide2 {
+            height: auto;
+            width: 100%;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(0, 38, 77));
+            overflow: hidden;
+        }
+
+        .slide2_left {
+            margin: auto;
+            height: 400px;
+            border-radius: 100%;
+            width: 400px;
+            background-image: url('./img/nilarnab_d.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .slide2_right {
+            height: 100%;
+            width: 40%;
+            margin: auto;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 2vm;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .line {
+            height: 2px;
+            width: auto;
+            background-color: aliceblue;
+        }
+
+
+        .light_area {
+            width: 58.5%;
+            height: 10%;
+            margin: auto;
+            background-image: linear-gradient(180deg, rgb(0, 73, 146) 0%, rgba(2, 71, 141, 0));
+        }
+
+        .tube_light {
+            width: 60%;
+            margin-top: 5px;
+            height: 20px;
+            margin: auto;
+            border-radius: 20px;
+            background-color: rgb(204, 212, 255);
+        }
+
+        .slide3 {
+            height: auto;
+            width: 100%;
+            background-color: rgba(2, 71, 141, 0);
+            border-width: 2px 0px 0px 0px;
+            border-style: solid;
+            border-color: rgb(116, 190, 255);
+            overflow: hidden;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .skills {
+            height: auto;
+            width: 100%;
+            background-color: rgba(2, 71, 141, 0);
+            border-width: 2px 0px 0px 0px;
+            border-style: solid;
+            border-color: rgb(116, 190, 255);
+            overflow: hidden;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .projs {
+            width: 100%;
+            height: auto;
+            border-width: 1px;
+            border-color: white;
+            border-style: solid;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .proj_field {
+            width: 80%;
+            margin: auto;
+            height: auto;
+            background-color: rgba(0, 128, 255, 0);
+        }
+
+        .element {
+            align-items: center;
+            background-color: rgba(0, 79, 158, 0);
+            border-style: solid;
+            border-color: rgb(116, 190, 255);
+            border-width: 2px;
+            box-shadow:
+                3px 3px 16px 0 rgb(0, 73, 146),
+                -3px -3px 16px 0 rgb(0, 73, 146);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .element:hover {
+            align-items: center;
+            background-color: rgba(0, 79, 158, 0);
+            border-style: solid;
+            border-color: rgb(116, 190, 255);
+            border-width: 2px;
+            box-shadow:
+                12px 12px 16px 0 rgb(0, 73, 146),
+                -12px -12px 16px 0 rgb(0, 73, 146);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            transition: 1s;
+            transform: scale(1.01);
+        }
+
+        /* tree */
+        .fractals {
+            height: 400px;
+            width: 400px;
+        }
+
+        .fractals {
+
+            --colors: steelblue skyblue white blue;
+            --angle: 31;
+            --starting-length-percent: 21;
+            --next-line-size: 0.75;
+            --shape: line;
+            --max-draw-count: 10000;
+            --debug-to-console: 0;
+            --show-origin: 0;
+            background-image: paint(fractals);
+
+        }
+
+
+
+        ul {
+            transform: translateX(20px);
+            width: 90%;
+        }
+
+        h1 {
+            color: rgb(116, 190, 255);
+        }
+
+        h3 {
+            color: rgb(116, 190, 255);
+        }
+
+        p {
+            color: rgb(116, 190, 255);
+        }
+
+        ul {
+            color: rgb(116, 190, 255);
+        }
+
+        #skills>#skill_col>p>i {
+            font-size: 100px;
+            transition: 0.5s;
+        }
+
+        #skills>#skill_col>p>i:hover {
+            transform: rotateZ(20deg);
+            transform: translateY(-20px);
+            transform: scale(1.5);
+        }
+
+        #skills {
+            width: 80%;
+        }
+
+        .scroll,
+        .scroll2 {
+            display: none;
+        }
+
+        #tech {
+            width: 400px;
+        }
+
+        @media screen and (max-width: 540px) {
+            .text_container {
+                width: 100%;
+                font-size: 1px;
+            }
+
+            .proj_field {
+                width: 90%;
+            }
+
+            .text {
+                margin: 10%;
+                width: 95%;
+                margin: auto;
+                text-align: center;
+            }
+
+            #nav {
+                font-size: small;
+                margin: 10%;
+                text-align: center;
+                justify-content: center;
+                width: 95%;
+                margin: auto;
+            }
+
+            
+
+            .text>h1 {
+                font-size: 60px;
+                margin-top: 10%;
+                font-family: sans-serif;
+                color: white;
+            }
+
+            .text>p {
+                font-size: 20px;
+                margin-top: 20%;
+                color: rgb(190, 190, 190);
+            }
+
+            .text>h3 {
+                font-size: 40px;
+                color: rgb(190, 190, 190);
+            }
+
+            .fractals {
+                height: 300px;
+                width: 80%;
+            }
+
+            .fractals {
+
+                --colors: steelblue skyblue white blue;
+                --angle: 31;
+                --starting-length-percent: 19;
+                --next-line-size: 0.75;
+                --shape: line;
+                --max-draw-count: 10000;
+                --debug-to-console: 0;
+                --show-origin: 0;
+                background-image: paint(fractals);
+            }
+
+            #skills {
+                width: 100%;
+            }
+
+            .slide2_left {
+                height: 200px;
+                width: 200px;
+            }
+
+            .slide2_right {
+                width: 90%;
+            }
+
+            #tech {
+                width: 90%;
+            }
+
+
+            /* animation for the down scrolling */
+            @keyframes rotate {
+                0% {
+                    font-size: 50px;
+                }
+
+                50% {
+                    transform: translateY(-70px);
+                    font-size: 10px;
+                }
+
+                58% {
+                    transform: translateY(0px);
+                    font-size: 50px;
+                }
+
+                60% {
+                    transform: rotate(360deg);
+                }
+
+
+            }
+
+            @keyframes fade {
+                50% {
+                    opacity: 1;
+                }
+            }
+
+
+
+            /* aniamtion classes*/
+            .scroll {
+                display: block;
+                font-size: 50px;
+                margin-top: 75px;
+                opacity: 1;
+                animation-name: rotate;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            .scroll2 {
+                display: block;
+                font-size: 50px;
+                opacity: 0;
+                animation-name: fade;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="slide1">
+
+
+
+
+
+        <div id="back" class="back_left">
+            <!--
+        <div class="back_right">
+        -->
+
+            <div id="cont_id" class="text_container" style="transform: scale(0.833)">
+                <div id="nav" align='center'>
+                    <div class="row">
+                        <div class="col-1 col-lg-2" style="text-align: center; justify-content: center;">
+                            <a class="navlink" href="#me" style="color: white;">me</a>
+                        </div>
+                        <div class="col-2 col-lg-2" style="text-align: center; justify-content: center;">
+                            <a href="#skls" style="color: white;">Skills</a>
+                        </div>
+                        <div class="col-3 col-lg-3" style="text-align: center; justify-content: center;">
+                            <a href="#achive" style="color: white;">Acheivement</a>
+                        </div>
+                        <div class="col-3 col-lg-3" style="text-align: center; justify-content: center;">
+                            <a href="#internships" style="color: white;">Internships</a>
+                        </div>
+                        <div class="col-2 col-lg-2" style="text-align: center; justify-content: center;">
+                            <a href="#projs" style="color: white;">Projects</a>
+                        </div>
+                    </div>
+
+                    <div class="line" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    </div>
+                </div>
+
+                <div class="text">
+
+                    <h1 data-aos="fade-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">NILARNAB DEBNATH
+                    </h1>
+                    <div class="line" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    </div>
+                    <p data-aos="fade-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">A Computer Science
+                        Student</p>
+                    <br>
+                    <br>
+                    <h3 data-aos="fade-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Malaviya National
+                        Institute of Technology</h3>
+
+                    <div id="animations" class="scroll">
+                        <i class="fas fa-chevron-circle-down"></i>
+                    </div>
+
+                    <div class="scroll2">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <!-- <i class="fas fa-chevron-circle-down"></i> -->
+
+                </div>
+            </div>
+            <!--
+        </div>
+    -->
+        </div>
+    </div>
+
+
+
+    <div class="slide2">
+        <div class="tube_light"></div>
+        <div class="light_area"></div>
+
+        <div class="gap" style="height: 100px;"></div>
+        <div class="cont" style="margin: auto">
+            <div class="row" style="height: 100%; width: 100%; margin: auto">
+                <div class="slide2_left" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="500">
+                </div>
+                <br>
+                <div class="slide2_right" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500">
+                    <h1 id="me">About Me</h1>
+                    <div class="line" style="background-color: rgb(116, 190, 255); margin-bottom: 20px"></div>
+                    <p>
+                        I am a young developer with dynamic personality and a passion of learning. My area of work
+                        includes implementation of various
+                        webdesigning trends, working in server side, backend development with php, python and work with
+                        object detection with custom trained YOLO models.
+                        I am always looking forward to learn more and explore in the process
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="gap" style="height: 100px;"></div>
+    </div>
+
+    <div id="skls" class="skills" align='center'>
+        <br>
+        <h1>Technical Skills</h1>
+        <div id="tech" class="line" style="background-color: rgb(116, 190, 255)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic" data-aos-duration="1000"></div>
+        <div class="fractals">
+
+        </div>
+
+        <div class="line" style="width: 100px; background-color: rgb(116, 190, 255)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic" data-aos-duration="100"></div>
+        <div class="gap" style="height: 20px;"></div>
+        <div class="line" style="width: 250px; background-color: rgb(116, 190, 255)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic" data-aos-duration="500"></div>
+        <div class="gap" style="height: 20px;"></div>
+        <div class="line" style="width: 100px; background-color: rgb(116, 190, 255)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic" data-aos-duration="1000" align='center'></div>
+
+        <div class="gap" style="height: 60px;"></div>
+
+        <div id="skills" class="row">
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fab fa-html5"></i></p>
+                <p>HTML</p>
+            </div>
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fab fa-css3-alt"></i></p>
+                <p>CSS</p>
+            </div>
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fab fa-js-square"></i></p>
+                <p>JavaScript</p>
+            </div>
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fab fa-bootstrap"></i></p>
+                <p>Bootstrap</p>
+            </div>
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fas fa-wind"></i></p>
+                <p>TAILWIND</p>
+            </div>
+            <div id="skill_col" class="col-lg-2 col-6">
+                <p><i class="fas fa-database"></i></p>
+                <p>MySql</p>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <div class="slide3" style="height: auto">
+        <br><br>
+
+        <div id="achive" class="proj_field">
+            <h1>ACHIEVMENTS</h1>
+            <div class="line" style="background-color: black"></div>
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+
+                    <h1>Secured 2nd position </h1>
+                    <p>in Web Design Competition by college ICT center</p>
+
+
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <ul>
+                        <li>
+                            Used HTML, CSS, js, bootstrap to make basic, multiple screen compatible, animated and robust
+                            design.
+                        </li>
+                        <li>
+                            Implemeted neumorphism for creating an embedded GUI effect.
+                        </li>
+                        <li>
+                            Implemented glassmorphism to create frosted glass effect.
+                        </li>
+                        <li>
+                            used <strong>php-ml</strong> to implement supervised classification using KNN.
+                        </li>
+                        <li>
+                            Used js to create and trigger animations.
+                        </li>
+                    </ul>
+
+                    <!-- <h3>links</h3>
+                    <ul>
+                        <li>link to github</li>
+                        <li>link to the node value</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div class="slide3" style="height: auto">
+        <br><br>
+
+        <div id="internships" class="proj_field">
+            <h1>INTERNSHIPS</h1>
+            <div class="line" style="background-color: black"></div>
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+                    <h1>Software Developer Summer Intern, PillarPlus Pvt Ltd</h1>
+                    <p style="font-style: italic;">May'21 - July'21</p>
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <p>Python internship based on django backend using <strong>ezdxf</strong> aimed at making
+                        architectural design automation.</p>
+
+                    <ul>
+                        <li>
+                            Worked on architectural design automation using python libraries, mathematical formulas and
+                            logics.
+                        </li>
+                        <li>
+                            Used ezdxf library in order to auto detect blocks in dxf file, automate the connection
+                            making in building wiring system in the plan,
+                            visual representation of switch board in dxf files and automation of drawing of plumbing
+                            lines in the front view.
+                        </li>
+                        <li>
+                            Used math, numby, ezdxf libraries in order to find the best mathematical logic for drawing
+                            the
+                            architectural drawings.
+                        </li>
+                        <li>
+                            It made the work for architectural engineers in the drawing part fast and block detection
+                            and
+                            identification fully automated.
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+
+    <div id="projs" class="slide3" style="height: auto">
+        <br><br>
+
+        <div class="proj_field">
+            <h1>MY PROJECTS</h1>
+            <div class="line" style="background-color: black"></div>
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+                    <h1>HR Work Automator</h1>
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <ul>
+                        <li>
+                            Used PHP and MySql in order to maintain and update attendance database in the portal.
+                        </li>
+                        <li>
+                            Used html, CSS, javascript, bootstrap in order to build animated, robust, interactive and
+                            user friendly interface.
+                        </li>
+                        <li>
+                            Used PHP in order to make multiple access levels and added mailing features for the
+                            volunteers so
+                            that they can send email regarding each event.
+                        </li>
+                        <li>
+                            Used one way encryption to store passwords and enhance security level.
+                        </li>
+                        <li>
+                            It has made event organisation easier than ever and first ever opportunity for the
+                            institution to
+                            have a fund raiser’s database for mailing.
+                        </li>
+                    </ul>
+                    <h3>links</h3>
+                    <ul>
+                        <li><a href="https://www.hopeeverywhere.live/" target="_blank">Project link</a></li>
+                        <li><a href="https://www.hopeeverywhere.live/team.php">Team</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+                    <h1>Youtube video control system by jesture with YOLO</h1>
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <ul>
+                        <li>
+                            Used custom trained YOLO model to detect fingers, acheiving an accuracy of 99.5%
+                        </li>
+                        <li>
+                            Used PyAutoGui to handle keyboard operations once detection is complete
+                        </li>
+                        <li>
+                            Got praise for making a 'touch less interface' which has become a prime necessity pendemic
+                            situation
+                        </li>
+                    </ul>
+
+                    <h3>links</h3>
+                    <ul>
+                        <li>link to github</li>
+                        <li>link to the node value</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+                    <h1>Lunar Indentifier with YOLO</h1>
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <ul>
+                        <li>
+                            Used custom trained YOLO model to detect moon and its craters, acheiving an accuracy of 90%
+                        </li>
+                        <li>
+                            Trained model on raw input recieved from telescope which is relayed to the system via mobile
+                            webcam
+                        </li>
+                        <li>
+                            Acheived results with 92% accuracy in practical scenarios for different appertures of
+                            telescopes
+                        </li>
+                    </ul>
+
+                    <h3>links</h3>
+                    <ul>
+                        <li>link to github</li>
+                        <li>link to the node value</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="element projs">
+                <div class="proj_text" style="width: 95%; margin: auto">
+                    <h1>Proj 1</h1>
+                    <div class="line" style="background-color: rgb(0, 73, 146);"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, minus quaerat fugiat
+                        perspiciatis ex architecto harum dolore amet recusandae deleniti at! Alias quidem esse ut
+                        eligendi natus ratione cum nemo.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab debitis nisi beatae cum,
+                        necessitati</p>
+
+                    <h3>links</h3>
+                    <ul>
+                        <li>link to github</li>
+                        <li>link to the node value</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        // Modern Browsers - Import JavaScript file from CDN
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('https://unpkg.com/css-houdini-fractals@1.0.0/fractals.js');
+        }
+    </script>
+
+    <script type="module">
+        (async function () {
+            if (CSS['paintWorklet'] === undefined) {
+                await import('https://unpkg.com/css-paint-polyfill');
+            }
+            CSS.paintWorklet.addModule('fractals.js');
+        })();
+    </script>
+
+
+
+    <script>
+        const el = document.querySelector("#back");
+
+        var div = document.querySelector("#cont_id");
+        var isOnDiv = false;
+
+        div.addEventListener('mouseenter', function () {
+            // stuff to do when the mouse enters this div
+            isOnDiv = true;
+        }, false);
+
+        div.addEventListener('mouseleave', function () {
+            // stuff to do when the mouse enters this div
+            isOnDiv = false;
+        }, false);
+
+
+        el.addEventListener("mousemove", (e) => {
+            if (isOnDiv === false) {
+                el.style.backgroundPositionX = -e.offsetX * 0.03 + "px";
+            } else {
+                setTimeout(function () {
+                    mover.classList.add("no-more-slidey");
+                    container.removeEventListener("mousemove");
+                }, 250);
+            }
+
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById('animations').style.display = 'none';
+            } else {
+                document.getElementById('animations').style.display = 'block';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
