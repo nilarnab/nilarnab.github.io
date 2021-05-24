@@ -45,14 +45,13 @@
 
         .slide_1 {
             position: fixed;
-            top: 0px;
+            top: 0;
             height: 100%;
             width: 100%;
             overflow: visible;
             transition: 2s;
-            transition-timing-function: cubic-bezier(0.8, 0.1, 0.1, 0.8);
             background-color: rgb(39, 102, 120);
-            z-index: -5;
+            z-index: 5;
         }
 
         .block {
@@ -138,7 +137,7 @@
             transition: 0.5s;
             top: 20px;
             left: 20px;
-            z-index: -1;
+            z-index: 10;
         }
 
         .proj_text {
@@ -157,7 +156,7 @@
             transition: 0.5s;
             bottom: 20px;
             right: 20px;
-            z-index: -1;
+            z-index: 10;
         }
 
         #line_resp {
@@ -217,6 +216,7 @@
             right: 10px;
             border-color: #276678;
             border-radius: 50%;
+            z-index: 8;
             transform: rotate(-90deg);
         }
 
