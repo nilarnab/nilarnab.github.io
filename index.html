@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortFOLIO</title>
 
-    <link rel="shortcut icon" type="image/png" href="./img/favicon.PNG"/>
+    <link rel="shortcut icon" type="image/png" href="./img/"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -53,7 +53,7 @@
             overflow: visible;
             transition: 2s;
             background-color: rgb(39, 102, 120);
-            z-index: 5;
+            z-index: 0;
         }
 
         .block {
@@ -86,8 +86,10 @@
             display: none;
         }
 
+        
 
-        #text>h1 {
+
+        #text_h {
             font-weight: 10000;
             font-size: 200px;
         }
@@ -101,6 +103,7 @@
             width: 80%;
             margin: auto;
             height: 100%;
+            z-index: 100;
         }
 
         .my_image {
@@ -169,6 +172,8 @@
             margin: auto;
             z-index: 10;
         }
+
+
 
         .internships {
             margin-top: 0%;
@@ -250,6 +255,8 @@
             --show-origin: 0;
             background-image: paint(fractals);
         }
+
+       
     </style>
 
 
@@ -279,7 +286,7 @@
             }
 
 
-            #text>h1 {
+            #text_h {
                 font-weight: 5000;
                 font-size: 100px;
             }
@@ -355,7 +362,7 @@
         </div>
 
         <div id="text" class="text">
-            <h1>HE<br>LLO</h1>
+            <h1 id="text_h">HE<br>LLO</h1>
         </div>
 
     </div>
@@ -869,6 +876,18 @@
         };
 
         var val = screen.height;
+        var width = screen.width;
+        
+        if (width > 600)
+        {
+            var prev_val = '200px';
+        }
+        else
+        {
+            var prev_val = '100px';
+        }
+
+        console.log("prev value: " + prev_val);
 
         function myFunction() {
 
@@ -878,6 +897,7 @@
                 document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
                 document.getElementById("slide1").style.width = '100%';
                 document.getElementById("block").style.height = '500px';
+                document.getElementById("text_h").style.fontSize = prev_val;
                 document.getElementById("text").style.opacity = '1';
                 document.getElementById("me").style.opacity = '0';
                 document.body.style.color = 'white';
@@ -890,7 +910,7 @@
             } else if (val > document.documentElement.scrollTop > 0) {
                 // document.getElementById("slide1").style.backgroundColor = "white";
                 document.getElementById("block").style.height = '0px';
-                document.getElementById("text").style.opacity = '0';
+                document.getElementById("text_h").style.fontSize = '0px';
                 document.getElementById("slide1").style.width = '0%';
                 document.getElementById("me").style.opacity = '1';
                 document.body.style.color = 'rgb(39, 102, 120)';

@@ -360,7 +360,7 @@
 
     <div class="gap" style="height: 100%;"></div>
 
-    <div class="cont">
+    <div class="cont" style="z-index: 1000;">
 
         <div id="me" class="my_image">
 
@@ -369,7 +369,7 @@
         <div class="about" align='center'>
             <h1>HELLO WORLD! I am Nilarnab</h1>
             
-            <a href="resources/soft Resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
+            <a href="resources/soft Resume.pdf" class="resume" target="_blank">Resume</a>
             <br>
             <br>
             <div id="line_resp">
@@ -871,7 +871,7 @@
         function myFunction() {
 
             document.getElementById('value').innerHTML = document.documentElement.scrollTop;
-
+            console.log(document.documentElement.scrollTop);
             if (100 > document.documentElement.scrollTop) {
                 document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
                 document.getElementById("slide1").style.width = '100%';
@@ -885,10 +885,12 @@
                 document.getElementById("line").style.backgroundColor = "white";
                 document.getElementById("line2").style.backgroundColor = "white";
 
-            } else if (val > document.documentElement.scrollTop > 0) {
+            } else {
                 // document.getElementById("slide1").style.backgroundColor = "white";
+                console.log("next");
                 document.getElementById("block").style.height = '0px';
-                document.getElementById("text").style.opacity = '0';
+                document.getElementById("block").style.display = 'none';
+                document.getElementById("text").style.height = '0px';
                 document.getElementById("slide1").style.width = '0%';
                 document.getElementById("me").style.opacity = '1';
                 document.body.style.color = 'rgb(39, 102, 120)';
@@ -898,30 +900,7 @@
                 document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
                 document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
 
-            } else if (2 * val > document.documentElement.scrollTop > 0) {
-                // document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
-                document.getElementById("block").style.height = '0px';
-                document.getElementById("text").style.opacity = '0';
-                document.getElementById("slide1").style.width = '0%';
-                document.body.style.color = 'rgb(39, 102, 120)';
-                // document.body.style.color = 'white';
-                // document.getElementById('line_resp').style.backgroundColor = 'white';
-
-                document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
-                document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
-
-            } else {
-                // document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
-                document.getElementById("block").style.height = '0px';
-                document.getElementById("text").style.opacity = '0';
-                document.getElementById("slide1").style.width = '0%';
-                document.body.style.color = 'rgb(39, 102, 120)';
-                document.getElementById('line_resp').style.backgroundColor = 'rgb(39, 102, 120)';
-
-                document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
-                document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
-
-            }
+            } 
         }
     </script>
 
