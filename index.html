@@ -18,6 +18,8 @@
     <!-- place for font awesome-->
     <script src="https://kit.fontawesome.com/8fedbb90c1.js" crossorigin="anonymous"></script>
 
+    <!--Style sheet-->
+    <link rel="stylesheet" href="./css/sidenav.css" />
 
     <!-- Color pallete used
                 #f6f5f5 white
@@ -38,6 +40,7 @@
             height: 100%;
             width: 100%;
             color: rgb(39, 102, 120);
+            scroll-behavior: smooth;
         }
 
         .slide_1 {
@@ -198,6 +201,12 @@
             color: #276678;
             opacity: 0;
             z-index: 2;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #276678;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 2px 2px 20px #276678, -2px -2px 20px #276678;
         }
 
         #toggle {
@@ -245,15 +254,13 @@
     <style>
         /* for mobile phone */
         @media only screen and (max-width: 600px) {
-            .my_image
-            {
+            .my_image {
                 height: 200px;
                 width: 200px;
             }
 
-            .cont
-            {
-                width: 90%;   
+            .cont {
+                width: 90%;
             }
 
             .block {
@@ -268,7 +275,7 @@
                 top: 30%;
                 left: 30%;
             }
-            
+
 
             #text>h1 {
                 font-weight: 5000;
@@ -297,13 +304,11 @@
                 z-index: -1;
             }
 
-            .about 
-            {
+            .about {
                 height: auto;
             }
 
-            #toggle
-            {
+            #toggle {
                 top: 0px;
                 right: 0px;
             }
@@ -326,28 +331,17 @@
     </div>
 
 
-    <div class="menue" id="menue">
-        <p>Menue</p>
-        <ul>
-            <li>
-                <a href="#me">
-                    <p>About me</p>
-                </a>
-            </li>
-            <li>
-                <a href="#skls">
-                    <p>Skills</p>
-                </a>
-            </li>
-            <li>
-                <a href="#skls">
-                    <p>ACHIEVMENTS</p>
-                </a>
-            </li>
-        </ul>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#me">About</a>
+        <a href="#skls">Technical Skills</a>
+        <a href="#acheive">Acheivment</a>
+        <a href="#internships">Internships</a>
+        <a href="#projects">Projects</a>
+
     </div>
 
-    <button id="toggle" onclick="display_button()"><i class="fas fa-chevron-up"
+    <button id="toggle" onclick="openNav()"><i class="fas fa-chevron-up"
             style="font-size: 20px; color: #276678"></i></button>
 
 
@@ -488,7 +482,7 @@
 
         <div class="gap" style="height: 100px;"></div>
 
-        <div class="internships">
+        <div id='acheive' class="internships">
 
             <h1 align=center>ACHIEVMENT</h1>
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
@@ -539,7 +533,7 @@
         <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
             style="height: 2px;"></div>
 
-        <div class="internships">
+        <div id='internships' class="internships">
             <div class="gap" style="height: 50px;"></div>
 
 
@@ -583,13 +577,12 @@
                         lines in the front view.
                     </li>
                     <li>
-                        Used math, numby, ezdxf libraries in order to find the best mathematical logic for drawing
+                        Used math, numpy, ezdxf libraries in order to find the best mathematical logic for drawing
                         the
                         architectural drawings.
                     </li>
                     <li>
-                        It made the work for architectural engineers in the drawing part fast and block detection
-                        and
+                        It made the work for architectural engineers in the drawing part fast and block detection,
                         identification fully automated.
                     </li>
 
@@ -597,12 +590,11 @@
 
             </div>
 
-            <div class="gap" style="height: 50px;"></div>
+            <!-- <div class="gap" style="height: 50px;"></div>
 
             <div class="proj_text" data-aos="fade-up">
                 <h1>Full Stack Developer Intern, PillarPlus Pvt Ltd</h1>
                 <p style="font-style: italic;">Aprl'20 - present</p>
-                <!-- <div class="line" style="background-color: rgb(0, 73, 146);"></div> -->
                 <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                     style="width: 60%"></div>
 
@@ -625,10 +617,10 @@
 
                 </ul>
 
-            </div>
+            </div> -->
         </div>
 
-        <div class="internships">
+        <div id="projects" class="internships">
             <div class="gap" style="height: 50px;"></div>
 
 
@@ -652,9 +644,10 @@
 
                 <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                     style="width: 60%"></div>
-
-                <div class="btn btn default" onclick="refresh()">Refresh!</div>
-
+                <br>
+                <button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
+                <br>
+                <br>
                 <iframe id="hope_portal" src="https://hopeeverywhere.live" frameborder="0"
                     style="height: 800px; width: 100%;"></iframe>
 
@@ -699,7 +692,7 @@
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                 style="width: 60%"></div>
 
-            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
 
             <iframe id="hope_portal" src="https://www.youtube.com/embed/0T715ih4DeA" title="YouTube video player"
                 frameborder="0"
@@ -729,9 +722,12 @@
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                 style="width: 60%"></div>
 
-            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
 
-            <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="height: 500px; width: 100%;"></iframe>
+            <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="height: 500px; width: 100%;"></iframe>
 
             <ul>
                 <li>
@@ -751,6 +747,99 @@
         </div>
         <br>
         <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Python Command Line Application for Finding Open Slots in Vaccination Drive</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <!-- <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="height: 500px; width: 100%;"></iframe> -->
+
+            <ul>
+                <li>Used python to fetch raw data of vaccination centers from setu api, later to be converted to json
+                    with the .json() method.</li>
+
+                <li>Traversed data to find if there is an available slot for minimum age limit 18.</li>
+
+                <li>The logic is applied in a while loop every 5 seconds and beep is emitted (by winsound) for 3 seconds
+                    if required criteria are met.</li>
+
+                <li>Made slot booking easy as multiple times manual checking is rendered completely redundant with this
+                    application.</li>
+
+                <li>Git link: <a href="https://github.com/nilarnab/vaccine_18plus_slot_detector"
+                        target="_blank">vaccine_18plus_slot_detector.</a></li>
+
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Web Application to Resolve Premises Given in CNF</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <iframe id="resolution_engine" src="https://knowyourfood.xyz/res_engine/public/" frameborder="0"
+                style="height: 800px; width: 100%;"></iframe>
+
+
+
+            <ul>
+                <li>Made a web application with php and ajax to find a resolved solution of premises given in CNF.</li>
+
+                <li>Worked with ajax to give on-page resolved premises without changing the page.</li>
+                <li>Used php based logic to recursively derive the complete solution.</li>
+                <li>Made finding resolution of big CNF expression easy and completely automatic</li>
+
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Applied Classification Machine Learning on iris data set</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <!-- <iframe id="resolution_engine" src="https://knowyourfood.xyz/res_engine/public/" frameborder="0"
+                style="height: 800px; width: 100%;"></iframe> -->
+
+
+
+            <ul>
+                <li>Classification of Iris dataset using k-Nearest Neighbour (kNN) method.</li>
+                <li>Used pandas and numpy libraries to read and pre-process the dataset.</li>
+                <li>Used ScikitLearn to implement the kNN classifier.</li>
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+
+
+
+    </div>
+    <br>
+    <br>
 
     </div>
     <br>
@@ -898,6 +987,33 @@
         }
     </script>
 
+    <script>
+        var inflated = false;
+        var button = document.getElementById("toggle");
+
+        function openNav() {
+
+
+            if (!inflated) {
+                button.style.transform = "rotate(180deg)";
+                document.getElementById("mySidenav").style.width = "100%";
+                inflated = true;
+            } else {
+                button.style.transform = "rotate(-90deg)";
+                document.getElementById("mySidenav").style.width = "0%";
+                inflated = false;
+            }
+            console.log("Buttonm pushed");
+
+        }
+
+        function closeNav() {
+            button.style.transform = "rotate(-90deg)";
+            document.getElementById("mySidenav").style.width = "0";
+            inflated = false;
+        }
+    </script>
+
     <script type="module">
         (async function () {
             if (CSS['paintWorklet'] === undefined) {
@@ -909,7 +1025,9 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            disable: 'mobile'
+        });
     </script>
 
 </body>

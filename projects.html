@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AOS library-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- place for font awesome-->
+    <script src="https://kit.fontawesome.com/8fedbb90c1.js" crossorigin="anonymous"></script>
+
+    <!--Style sheet-->
+    <link rel="stylesheet" href="./css/sidenav.css" />
+
+    <!-- Color pallete used
+                #f6f5f5 white
+                #d3e0ea rgb(211, 224, 234)
+                #1687a7 rgb(22, 135, 167)
+        darkest #276678 rgb(39, 102, 120)
+    -->
+    <style>
+        * {
+            padding: 0px 0px;
+            margin: 0px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition: 0.1s;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            color: rgb(39, 102, 120);
+            scroll-behavior: smooth;
+        }
+
+        .slide_1 {
+            position: fixed;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            overflow: visible;
+            transition: 2s;
+            transition-timing-function: cubic-bezier(0.8, 0.1, 0.1, 0.8);
+            background-color: rgb(39, 102, 120);
+            z-index: -2;
+        }
+
+        .block {
+            height: 500px;
+            width: 100px;
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            background-color: white;
+        }
+
+        .text {
+            height: 500px;
+            width: 100px;
+            position: fixed;
+            color: white;
+            top: 20%;
+            left: 40%;
+        }
+
+        #value {
+            position: fixed;
+            top: 0;
+
+        }
+
+        #scroll {
+            position: fixed;
+            top: 20;
+            display: none;
+        }
+
+
+        #text>h1 {
+            font-weight: 10000;
+            font-size: 200px;
+        }
+
+
+        p {
+            font-size: large;
+        }
+
+        .cont {
+            width: 80%;
+            margin: auto;
+            height: 100%;
+        }
+
+        .my_image {
+            height: 400px;
+            width: 400px;
+            border-radius: 0px;
+            margin: auto;
+            transform: translateX(-20px);
+            background-image: url(./img/nilarnab_d-removebg-preview.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .about {
+            height: 60%;
+            width: 100%;
+        }
+
+        .acheive {
+            height: auto;
+            margin-top: 0%;
+        }
+
+        .line_bar {
+            height: 1px;
+            background-color: #276678;
+            width: 100%;
+        }
+
+        #line {
+            background-color: white;
+            height: 1px;
+            width: 20px;
+            position: fixed;
+            transition: 0.5s;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        .proj_text {
+            border-radius: 20px;
+            border-color: #276678;
+            border-width: 1px;
+            padding: 20px;
+            border-style: solid;
+        }
+
+        #line2 {
+            background-color: white;
+            height: 1px;
+            width: 20px;
+            position: fixed;
+            transition: 0.5s;
+            bottom: 20px;
+            right: 20px;
+            z-index: -1;
+        }
+
+        #line_resp {
+            background-color: rgb(39, 102, 120);
+            height: 1px;
+            width: 10%;
+            transition: 0.5s;
+            margin: auto;
+            z-index: 10;
+        }
+
+        .internships {
+            margin-top: 0%;
+        }
+
+        i {
+            font-size: 50px;
+            transition: 0.5s;
+            transition-timing-function: cubic-bezier(0.8, 0.1, 0.1, 0.8);
+        }
+
+        i:hover {
+            transform: scale(3);
+        }
+
+        ul {
+            transform: translateX(20px);
+        }
+
+        .gap {
+            width: 10px;
+            /* background-color: black; */
+        }
+
+        .menue {
+            position: fixed;
+            top: 60px;
+            width: 200px;
+            right: 50px;
+            background-color: white;
+            color: #276678;
+            opacity: 0;
+            z-index: 2;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #276678;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 2px 2px 20px #276678, -2px -2px 20px #276678;
+        }
+
+        #toggle {
+            position: fixed;
+            top: 0px;
+            height: 40px;
+            width: 40px;
+            right: 10px;
+            border-color: #276678;
+            border-radius: 50%;
+            transform: rotate(-90deg);
+        }
+
+        #toggle>i:hover {
+            transform: scale(1);
+        }
+
+        a {
+            color: #276678;
+        }
+    </style>
+
+    <style>
+        .fractals {
+            height: 300px;
+            width: 80%;
+            color: rgb(39, 102, 120);
+        }
+
+        .fractals {
+
+            --colors: #276678;
+            --angle: 31;
+            --starting-length-percent: 19;
+            --next-line-size: 0.75;
+            --shape: line;
+            --max-draw-count: 10000;
+            --debug-to-console: 0;
+            --show-origin: 0;
+            background-image: paint(fractals);
+        }
+    </style>
+
+
+    <style>
+        /* for mobile phone */
+        @media only screen and (max-width: 600px) {
+            .my_image {
+                height: 200px;
+                width: 200px;
+            }
+
+            .cont {
+                width: 90%;
+            }
+
+            .block {
+                display: none;
+            }
+
+            .text {
+                height: 500px;
+                width: 100px;
+                position: fixed;
+                color: white;
+                top: 30%;
+                left: 30%;
+            }
+
+
+            #text>h1 {
+                font-weight: 5000;
+                font-size: 100px;
+            }
+
+            #line {
+                background-color: white;
+                height: 1px;
+                width: 10px;
+                position: fixed;
+                transition: 0.5s;
+                top: 0px;
+                left: 0px;
+                z-index: -1;
+            }
+
+            #line2 {
+                background-color: white;
+                height: 1px;
+                width: 10px;
+                position: fixed;
+                transition: 0.5s;
+                bottom: 0px;
+                right: 0px;
+                z-index: -1;
+            }
+
+            .about {
+                height: auto;
+            }
+
+            #toggle {
+                top: 0px;
+                right: 0px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="value"></div>
+    <div id="scroll">No data received</div>
+
+    <div id="line" align='center'>
+
+    </div>
+
+    <div id="line2">
+
+    </div>
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#me">About</a>
+        <a href="#skls">Technical Skills</a>
+        <a href="#acheive">Acheivment</a>
+        <a href="#internships">Internships</a>
+        <a href="#projects">Projects</a>
+
+    </div>
+
+    <button id="toggle" onclick="openNav()"><i class="fas fa-chevron-up"
+            style="font-size: 20px; color: #276678"></i></button>
+
+
+    <script>
+        function display_button() {
+            var x = document.getElementById("menue");
+            var button = document.getElementById("toggle")
+            if (x.style.opacity === "1") {
+                x.style.opacity = "0";
+                button.style.transform = "rotate(-90deg)";
+            } else {
+                x.style.opacity = "1";
+                button.style.transform = "rotate(180deg)";
+            }
+        }
+    </script>
+
+
+    <div id="projects" class="internships">
+        <div class="gap" style="height: 50px;"></div>
+
+
+
+
+        <h1 align=center>PROJECTS</h1>
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="width: 60%; margin: auto;"></div>
+        <br>
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="width: 40%; margin: auto;"></div>
+        <br>
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="width: 10%; margin: auto;"></div>
+
+
+        <div class="gap" style="height: 50px;"></div>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>HR Work Automator</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+
+            <iframe id="hope_portal" src="https://hopeeverywhere.live" frameborder="0"
+                style="height: 800px; width: 100%;"></iframe>
+
+            <ul>
+                <li>
+                    Used PHP and MySql in order to maintain and update attendance database in the portal.
+                </li>
+                <li>
+                    Used html, CSS, javascript, bootstrap in order to build animated, robust, interactive and
+                    user friendly interface.
+                </li>
+                <li>
+                    Used PHP in order to make multiple access levels and added mailing features for the
+                    volunteers so
+                    that they can send email regarding each event.
+                </li>
+                <li>
+                    Used one way encryption to store passwords and enhance security level.
+                </li>
+                <li>
+                    It has made event organisation easier than ever and first ever opportunity for the
+                    institution to
+                    have a fund raiser’s database for mailing.
+                </li>
+            </ul>
+
+            <h3>links</h3>
+            <ul>
+                <li><a id="hope_portal_link" href="https://www.hopeeverywhere.live/" target="_blank">Project
+                        link</a></li>
+                <li><a href="https://www.hopeeverywhere.live/team.php">Team</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="gap" style="height: 50px;"></div>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Youtube video control system by jesture with YOLO</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+
+            <iframe id="hope_portal" src="https://www.youtube.com/embed/0T715ih4DeA" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="height: 500px; width: 100%;"></iframe>
+
+            <ul>
+                <li>
+                    Used custom trained YOLO model to detect fingers, acheiving an accuracy of 99.5%
+                </li>
+                <li>
+                    Used PyAutoGui to handle keyboard operations once detection is complete
+                </li>
+                <li>
+                    Got praise for making a 'touch less interface' which has become a prime necessity pendemic
+                    situation
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="gap" style="height: 50px;"></div>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Lunar Feature Indentifier with YOLO</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+
+            <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="height: 500px; width: 100%;"></iframe>
+
+            <ul>
+                <li>
+                    Used custom trained YOLO model to detect moon and its craters, acheiving an accuracy of 90%
+                </li>
+                <li>
+                    Trained model on raw input recieved from telescope which is relayed to the system via mobile
+                    webcam
+                </li>
+                <li>
+                    Acheived results with 92% accuracy in practical scenarios for different appertures of
+                    telescopes
+                </li>
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Python Command Line Application for Finding Open Slots in Vaccination Drive</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <!-- <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="height: 500px; width: 100%;"></iframe> -->
+
+            <ul>
+                <li>Used python to fetch raw data of vaccination centers from setu api, later to be converted to json
+                    with the .json() method.</li>
+
+                <li>Traversed data to find if there is an available slot for minimum age limit 18.</li>
+
+                <li>The logic is applied in a while loop every 5 seconds and beep is emitted (by winsound) for 3 seconds
+                    if required criteria are met.</li>
+
+                <li>Made slot booking easy as multiple times manual checking is rendered completely redundant with this
+                    application.</li>
+
+                <li>Git link: <a href="https://github.com/nilarnab/vaccine_18plus_slot_detector"
+                        target="_blank">vaccine_18plus_slot_detector.</a></li>
+
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Web Application to Resolve Premises Given in CNF</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <iframe id="resolution_engine" src="https://knowyourfood.xyz/res_engine/public/" frameborder="0"
+                style="height: 800px; width: 100%;"></iframe>
+
+
+
+            <ul>
+                <li>Made a web application with php and ajax to find a resolved solution of premises given in CNF.</li>
+
+                <li>Worked with ajax to give on-page resolved premises without changing the page.</li>
+                <li>Used php based logic to recursively derive the complete solution.</li>
+                <li>Made finding resolution of big CNF expression easy and completely automatic</li>
+
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="proj_text" data-aos="fade-up">
+            <h1>Applied Classification Machine Learning on iris data set</h1>
+
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%"></div>
+
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
+
+            <!-- <iframe id="resolution_engine" src="https://knowyourfood.xyz/res_engine/public/" frameborder="0"
+                style="height: 800px; width: 100%;"></iframe> -->
+
+
+
+            <ul>
+                <li>Classification of Iris dataset using k-Nearest Neighbour (kNN) method.</li>
+                <li>Used pandas and numpy libraries to read and pre-process the dataset.</li>
+                <li>Used ScikitLearn to implement the kNN classifier.</li>
+            </ul>
+
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+
+    <script>
+        // script for bootstrap tooltip
+
+        $(document).ready(function () {
+            $('#hope_portal_link').tooltip({
+                title: "<p>php based portal project</p>",
+                html: true,
+                placement: "bottom"
+            });
+        });
+    </script>
+
+    <script>
+        // script for refresh
+        function refresh() {
+            location.reload();
+        }
+    </script>
+
+
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var val = screen.height;
+
+        function myFunction() {
+
+            document.getElementById('value').innerHTML = document.documentElement.scrollTop;
+
+            if (100 > document.documentElement.scrollTop) {
+                document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("slide1").style.width = '100%';
+                document.getElementById("block").style.height = '500px';
+                document.getElementById("text").style.opacity = '1';
+                document.getElementById("me").style.opacity = '0';
+                document.body.style.color = 'white';
+                document.alinkColor = 'white';
+                document.getElementById('line_resp').style.color = 'white';
+
+                document.getElementById("line").style.backgroundColor = "white";
+                document.getElementById("line2").style.backgroundColor = "white";
+
+            } else if (val > document.documentElement.scrollTop > 0) {
+                // document.getElementById("slide1").style.backgroundColor = "white";
+                document.getElementById("block").style.height = '0px';
+                document.getElementById("text").style.opacity = '0';
+                document.getElementById("slide1").style.width = '0%';
+                document.getElementById("me").style.opacity = '1';
+                document.body.style.color = 'rgb(39, 102, 120)';
+                document.alinkColor = 'rgb(39, 102, 120)';
+                document.getElementById('line_resp').style.backgroundColor = 'rgb(39, 102, 120)';
+
+                document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
+
+            } else if (2 * val > document.documentElement.scrollTop > 0) {
+                // document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("block").style.height = '0px';
+                document.getElementById("text").style.opacity = '0';
+                document.getElementById("slide1").style.width = '0%';
+                document.body.style.color = 'rgb(39, 102, 120)';
+                // document.body.style.color = 'white';
+                // document.getElementById('line_resp').style.backgroundColor = 'white';
+
+                document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
+
+            } else {
+                // document.getElementById("slide1").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("block").style.height = '0px';
+                document.getElementById("text").style.opacity = '0';
+                document.getElementById("slide1").style.width = '0%';
+                document.body.style.color = 'rgb(39, 102, 120)';
+                document.getElementById('line_resp').style.backgroundColor = 'rgb(39, 102, 120)';
+
+                document.getElementById("line").style.backgroundColor = "rgb(39, 102, 120)";
+                document.getElementById("line2").style.backgroundColor = "rgb(39, 102, 120)";
+
+            }
+        }
+    </script>
+
+    <script>
+        // scroll detection engine
+        var last_scroll = document.documentElement.scrollTop;
+
+        function is_scrolling() {
+            var new_top = document.documentElement.scrollTop;
+
+            // return abs(new_top - last_scroll);
+
+            if (Math.abs(last_scroll - new_top) > 5) {
+                last_scroll = new_top;
+                return 1;
+            } else {
+                return 0;
+            }
+
+        }
+
+
+
+
+
+
+        window.setInterval(function scroll_detect() {
+
+            var vrdct = is_scrolling();
+
+            if (vrdct) {
+                document.getElementById('scroll').innerHTML = 'SCROLLING';
+                document.getElementById('line').style.height = '60%';
+                document.getElementById('line2').style.height = '60%';
+                document.getElementById('line_resp').style.width = '60%';
+                document.getElementById('toggle').style.borderWidth = '10px';
+
+            } else {
+                document.getElementById('scroll').innerHTML = 'NOT SCROLLING';
+                document.getElementById('line').style.height = '20%';
+                document.getElementById('line2').style.height = '20%';
+                document.getElementById('line_resp').style.width = '20%';
+                document.getElementById('toggle').style.borderWidth = '1px';;
+            }
+        }, 200);
+    </script>
+
+
+    <script>
+        // Modern Browsers - Import JavaScript file from CDN
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('https://unpkg.com/css-houdini-fractals@1.0.0/fractals.js');
+        }
+    </script>
+
+    <script>
+        var inflated = false;
+        var button = document.getElementById("toggle");
+
+        function openNav() {
+
+
+            if (!inflated) {
+                button.style.transform = "rotate(180deg)";
+                document.getElementById("mySidenav").style.width = "100%";
+                inflated = true;
+            } else {
+                button.style.transform = "rotate(-90deg)";
+                document.getElementById("mySidenav").style.width = "0%";
+                inflated = false;
+            }
+            console.log("Buttonm pushed");
+
+        }
+
+        function closeNav() {
+            button.style.transform = "rotate(-90deg)";
+            document.getElementById("mySidenav").style.width = "0";
+            inflated = false;
+        }
+    </script>
+
+    <script type="module">
+        (async function () {
+            if (CSS['paintWorklet'] === undefined) {
+                await import('https://unpkg.com/css-paint-polyfill');
+            }
+            CSS.paintWorklet.addModule('fractals.js');
+        })();
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            disable: 'mobile'
+        });
+    </script>
+
+</body>
+
+</html>
