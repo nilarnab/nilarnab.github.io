@@ -52,7 +52,7 @@
             transition: 2s;
             transition-timing-function: cubic-bezier(0.8, 0.1, 0.1, 0.8);
             background-color: rgb(39, 102, 120);
-            z-index: -2;
+            z-index: -5;
         }
 
         .block {
@@ -344,20 +344,6 @@
     <button id="toggle" onclick="openNav()"><i class="fas fa-chevron-up"
             style="font-size: 20px; color: #276678"></i></button>
 
-
-    <script>
-        function display_button() {
-            var x = document.getElementById("menue");
-            var button = document.getElementById("toggle")
-            if (x.style.opacity === "1") {
-                x.style.opacity = "0";
-                button.style.transform = "rotate(-90deg)";
-            } else {
-                x.style.opacity = "1";
-                button.style.transform = "rotate(180deg)";
-            }
-        }
-    </script>
 
     <div id="slide1" class="slide_1">
 

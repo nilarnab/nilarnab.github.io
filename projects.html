@@ -45,14 +45,13 @@
 
         .slide_1 {
             position: fixed;
-            top: 0px;
+            top: 0;
             height: 100%;
             width: 100%;
             overflow: visible;
             transition: 2s;
-            transition-timing-function: cubic-bezier(0.8, 0.1, 0.1, 0.8);
             background-color: rgb(39, 102, 120);
-            z-index: -2;
+            z-index: 5;
         }
 
         .block {
@@ -138,7 +137,7 @@
             transition: 0.5s;
             top: 20px;
             left: 20px;
-            z-index: -1;
+            z-index: 10;
         }
 
         .proj_text {
@@ -157,7 +156,7 @@
             transition: 0.5s;
             bottom: 20px;
             right: 20px;
-            z-index: -1;
+            z-index: 10;
         }
 
         #line_resp {
@@ -217,6 +216,7 @@
             right: 10px;
             border-color: #276678;
             border-radius: 50%;
+            z-index: 8;
             transform: rotate(-90deg);
         }
 
@@ -319,8 +319,8 @@
 </head>
 
 <body>
-    <div id="value"></div>
-    <div id="scroll">No data received</div>
+    <div id="value" style="display: none"></div>
+    <div id="scroll" style="display: none;">No data received</div>
 
     <div id="line" align='center'>
 
@@ -345,83 +345,334 @@
             style="font-size: 20px; color: #276678"></i></button>
 
 
-    <script>
-        function display_button() {
-            var x = document.getElementById("menue");
-            var button = document.getElementById("toggle")
-            if (x.style.opacity === "1") {
-                x.style.opacity = "0";
-                button.style.transform = "rotate(-90deg)";
-            } else {
-                x.style.opacity = "1";
-                button.style.transform = "rotate(180deg)";
-            }
-        }
-    </script>
+    <div id="slide1" class="slide_1">
 
 
-    <div id="projects" class="internships">
-        <div class="gap" style="height: 50px;"></div>
+        <div id="block" class="block">
 
-
-
-
-        <h1 align=center>PROJECTS</h1>
-        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
-            style="width: 60%; margin: auto;"></div>
-        <br>
-        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
-            style="width: 40%; margin: auto;"></div>
-        <br>
-        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
-            style="width: 10%; margin: auto;"></div>
-
-
-        <div class="gap" style="height: 50px;"></div>
-
-        <div class="proj_text" data-aos="fade-up">
-            <h1>HR Work Automator</h1>
-
-            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
-                style="width: 60%"></div>
-
-            <div class="btn btn default" onclick="refresh()">Refresh!</div>
-
-            <iframe id="hope_portal" src="https://hopeeverywhere.live" frameborder="0"
-                style="height: 800px; width: 100%;"></iframe>
-
-            <ul>
-                <li>
-                    Used PHP and MySql in order to maintain and update attendance database in the portal.
-                </li>
-                <li>
-                    Used html, CSS, javascript, bootstrap in order to build animated, robust, interactive and
-                    user friendly interface.
-                </li>
-                <li>
-                    Used PHP in order to make multiple access levels and added mailing features for the
-                    volunteers so
-                    that they can send email regarding each event.
-                </li>
-                <li>
-                    Used one way encryption to store passwords and enhance security level.
-                </li>
-                <li>
-                    It has made event organisation easier than ever and first ever opportunity for the
-                    institution to
-                    have a fund raiser’s database for mailing.
-                </li>
-            </ul>
-
-            <h3>links</h3>
-            <ul>
-                <li><a id="hope_portal_link" href="https://www.hopeeverywhere.live/" target="_blank">Project
-                        link</a></li>
-                <li><a href="https://www.hopeeverywhere.live/team.php">Team</a></li>
-            </ul>
         </div>
 
+        <div id="text" class="text">
+            <h1>HE<br>LLO</h1>
+        </div>
 
+    </div>
+
+    <div class="gap" style="height: 100%;"></div>
+
+    <div class="cont">
+
+        <div id="me" class="my_image">
+
+        </div>
+
+        <div class="about" align='center'>
+            <h1>HELLO WORLD! I am Nilarnab</h1>
+            
+            <a href="resources/soft Resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
+            <br>
+            <br>
+            <div id="line_resp">
+
+            </div>
+            <br>
+
+            <p>
+                I am a young developer with dynamic personality and a passion of learning.
+                My area of work includes implementation of various webdesigning trends, working in server side,
+                backend development with php, python and work with object detection with custom trained YOLO models.
+                I am always looking forward to learn more and explore in the process
+
+
+            </p>
+        </div>
+
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="height: 2px;"></div>
+
+        <div class="acheive" align='center'>
+            <div id="skls" class="skills" align='center'>
+
+                <br>
+                <h1>Technical Skills</h1>
+                <div id="line_resp">
+
+                </div>
+                <div id="tech" class="line" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1000"></div>
+                <div class="fractals">
+
+                </div>
+
+                <div class="line_bar" style="width: 100px;" data-aos="flip-left"></div>
+
+                <div class="gap" style="height: 20px;"></div>
+                <div class="line_bar" style="width: 250px;" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                    data-aos-duration="500"></div>
+                <div class="gap" style="height: 20px;"></div>
+                <div class="line_bar" style="width: 100px;" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1000" align='center'></div>
+
+                <div class="gap" style="height: 60px;"></div>
+
+                <div id="skills" class="row">
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-html5"></i></p>
+                        <p>HTML</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-css3-alt"></i></p>
+                        <p>CSS</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-js-square"></i></p>
+                        <p>JavaScript</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-bootstrap"></i></p>
+                        <p>Bootstrap</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-php"></i></p>
+                        <p>php</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fas fa-database"></i></p>
+                        <p>MySql</p>
+                    </div>
+
+                </div>
+
+                <div id="skills" class="row" align='center'>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-python"></i></p>
+                        <p>python</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fab fa-android"></i></p>
+                        <p>Android Studio</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fas fa-eye"></i></p>
+                        <p>YOLO</p>
+                    </div>
+                    <div id="skill_col" class="col-lg-2 col-6">
+                        <p><i class="fas fa-wind"></i></p>
+                        <p>TAILWIND</p>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+            </div>
+        </div>
+
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="height: 2px;"></div>
+
+        <div class="gap" style="height: 100px;"></div>
+
+        <div id='acheive' class="internships">
+
+            <h1 align=center>ACHIEVMENT</h1>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 40%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 10%; margin: auto;"></div>
+
+            <div class="gap" style="height: 50px;"></div>
+
+            <div class="proj_text" data-aos="fade-up">
+                <h1>
+                    Secured 2nd position
+                    in Web Design Competition by college ICT center
+                </h1>
+
+                <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                    style="width: 60%;"></div>
+                <br>
+
+                <ul>
+                    <li>
+                        Used HTML, CSS, js, bootstrap to make basic, multiple screen compatible, animated and robust
+                        design.
+                    </li>
+                    <li>
+                        Implemeted neumorphism for creating an embedded GUI effect.
+                    </li>
+                    <li>
+                        Implemented glassmorphism to create frosted glass effect.
+                    </li>
+                    <li>
+                        used <strong>php-ml</strong> to implement supervised classification using KNN.
+                    </li>
+                    <li>
+                        Used js to create and trigger animations.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="gap" style="height: 100px;"></div>
+
+        <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+            style="height: 2px;"></div>
+
+        <div id='internships' class="internships">
+            <div class="gap" style="height: 50px;"></div>
+
+
+
+
+            <h1 align=center>INTERNSHIPS</h1>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 40%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 10%; margin: auto;"></div>
+
+
+
+
+
+            <div class="gap" style="height: 50px;"></div>
+
+            <div class="proj_text" data-aos="fade-up">
+                <h1>Software Developer Summer Intern, PillarPlus Pvt Ltd</h1>
+                <p style="font-style: italic;">May'21 - July'21</p>
+                <!-- <div class="line" style="background-color: rgb(0, 73, 146);"></div> -->
+                <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                    style="width: 60%"></div>
+
+                <p>Python internship based on django backend using <strong>ezdxf</strong> aimed at making
+                    architectural design automation.</p>
+
+                <ul>
+                    <li>
+                        Worked on architectural design automation using python libraries, mathematical formulas and
+                        logics.
+                    </li>
+                    <li>
+                        Used ezdxf library in order to auto detect blocks in dxf file, automate the connection
+                        making in building wiring system in the plan,
+                        visual representation of switch board in dxf files and automation of drawing of plumbing
+                        lines in the front view.
+                    </li>
+                    <li>
+                        Used math, numpy, ezdxf libraries in order to find the best mathematical logic for drawing
+                        the
+                        architectural drawings.
+                    </li>
+                    <li>
+                        It made the work for architectural engineers in the drawing part fast and block detection,
+                        identification fully automated.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- <div class="gap" style="height: 50px;"></div>
+
+            <div class="proj_text" data-aos="fade-up">
+                <h1>Full Stack Developer Intern, PillarPlus Pvt Ltd</h1>
+                <p style="font-style: italic;">Aprl'20 - present</p>
+                <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                    style="width: 60%"></div>
+
+                <p>Full stack development internship to create user friendly, robust, multiple screen compatible,
+                    responsive php based web applications</p>
+
+                <ul>
+                    <li>
+                        Worked on php and mysql based backend development
+                    </li>
+                    <li>
+                        Worked on HTML, CSS, JavaScript, Bootstrap to make responsive webdesign
+                    </li>
+                    <li>
+                        Worked on development and updation of institution web portal
+                    </li>
+                    <li>
+                        Served as the webmaster of institution webportal
+                    </li>
+
+                </ul>
+
+            </div> -->
+        </div>
+
+        <div id="projects" class="internships">
+            <div class="gap" style="height: 50px;"></div>
+
+
+
+
+            <h1 align=center>PROJECTS</h1>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 60%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 40%; margin: auto;"></div>
+            <br>
+            <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                style="width: 10%; margin: auto;"></div>
+
+
+            <div class="gap" style="height: 50px;"></div>
+
+            <div class="proj_text" data-aos="fade-up">
+                <h1>HR Work Automator</h1>
+
+                <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
+                    style="width: 60%"></div>
+                <br>
+                <button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
+                <br>
+                <br>
+                <iframe id="hope_portal" src="https://hopeeverywhere.live" frameborder="0"
+                    style="height: 800px; width: 100%;"></iframe>
+
+                <ul>
+                    <li>
+                        Used PHP and MySql in order to maintain and update attendance database in the portal.
+                    </li>
+                    <li>
+                        Used html, CSS, javascript, bootstrap in order to build animated, robust, interactive and
+                        user friendly interface.
+                    </li>
+                    <li>
+                        Used PHP in order to make multiple access levels and added mailing features for the
+                        volunteers so
+                        that they can send email regarding each event.
+                    </li>
+                    <li>
+                        Used one way encryption to store passwords and enhance security level.
+                    </li>
+                    <li>
+                        It has made event organisation easier than ever and first ever opportunity for the
+                        institution to
+                        have a fund raiser’s database for mailing.
+                    </li>
+                </ul>
+
+                <h3>links</h3>
+                <ul>
+                    <li><a id="hope_portal_link" href="https://www.hopeeverywhere.live/" target="_blank">Project
+                            link</a></li>
+                    <li><a href="https://www.hopeeverywhere.live/team.php">Team</a></li>
+                </ul>
+            </div>
+
+        </div>
 
         <div class="gap" style="height: 50px;"></div>
 
@@ -431,7 +682,7 @@
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                 style="width: 60%"></div>
 
-            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
 
             <iframe id="hope_portal" src="https://www.youtube.com/embed/0T715ih4DeA" title="YouTube video player"
                 frameborder="0"
@@ -461,7 +712,7 @@
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                 style="width: 60%"></div>
 
-            <div class="btn btn default" onclick="refresh()">Refresh!</div>
+            <!-- <div class="btn btn default" onclick="refresh()">Refresh!</div> -->
 
             <iframe id="hope_portal" src="https://www.youtube.com/embed/COyEhwP7C-c" title="YouTube video player"
                 frameborder="0"
@@ -572,6 +823,20 @@
         </div>
         <br>
         <br>
+
+
+
+
+    </div>
+    <br>
+    <br>
+
+    </div>
+    <br>
+    <br>
+
+    </div>
+
     </div>
 
 
