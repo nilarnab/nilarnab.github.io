@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio</title>
+
+
+    <!-- Google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    * {
+        padding: 0px 0px;
+        margin: 0px;
+        transition: 1s;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .slide1 {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        background-color: #FFFAFB;
+        opacity: 0.1;
+        background-image: url(./img/grid.jpg);
+        background-position: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .slide2 {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .frame {
+        overflow: hidden;
+    }
+
+    .head1 {
+        font-size: 50px;
+        position: fixed;
+        text-align: center;
+        bottom: 50%;
+        left: 25%;
+        color: #2B2C28;
+
+    }
+</style>
+
+<body>
+
+
+    <div class="frame">
+
+
+
+        <div id='canvas' class="slide1">
+
+        </div>
+
+        <div class="slide2">
+
+            <div id="heading1" class="head1">
+                Its Me
+            </div>
+
+
+            <h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </h1>
+
+
+        </div>
+
+        <div class="slide3">
+
+        </div>
+
+    </div>
+
+    <script>
+        heading_animation_complete = false;
+
+        function heading_change(revert) {
+            if (!revert) {
+                if (!heading_animation_complete) {
+                    console.log('rotating heading 1');
+                    document.getElementById('heading1').style.transform = "rotate(90deg)";
+
+                    setTimeout(function () {
+                        console.log('moving left heading 1');
+                        document.getElementById('heading1').style.left = "5px";
+                        // document.getElementById('heading1').style.bottom = "0px";
+                        document.getElementById('canvas').style.transform = 'scale(2, 2)';
+                        
+                    }, 1000);
+
+                    
+                    // document.getElementById('canvas').style.transform = 'rotate(90deg)';
+                    // document.getElementById('canvas').style.transform = 'rotate(80deg)';
+                    heading_animation_complete = true;
+
+                }
+
+
+            } else {
+
+                if (heading_animation_complete) {
+                    console.log('reverting left heading 1');
+
+                    document.getElementById('heading1').style.left = "25%";
+
+                    setTimeout(function () {
+                        console.log('reverint rotation heading 1');
+
+                        document.getElementById('heading1').style.transform = "rotate(0deg)";
+                        document.getElementById('canvas').style.transform = 'scale(1, 1)';
+                    }, 1000);
+
+                    // document.getElementById('canvas').style.transform = 'rotate(0deg)';
+
+                    heading_animation_complete = false;
+
+                }
+
+
+            }
+
+        }
+
+
+        setInterval(
+            function clock_engine() {
+                scroll = window.scrollY;
+                console.log("scroll value " + scroll);
+
+
+                // triggering heading based animation
+                if (scroll > 100) {
+                    heading_change(false);
+                } else {
+                    console.log('reverting heading 1');
+                    heading_change(true);
+                }
+
+            },
+            1000
+        )
+    </script>
+
+
+
+</body>
+
+</html>

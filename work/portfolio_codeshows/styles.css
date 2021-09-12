@@ -1,0 +1,98 @@
+#title{
+  background-color: #2B2C28;
+  color: #fff;
+}
+
+h3{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.container-fluid{
+  padding: 5% 15% 7%;
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  padding: 15% 10% 7%;
+  line-height: 1.5;
+  align-self: center;
+  /* animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate; */
+}
+.center{
+  text-align: center;
+}
+.p-new{
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+.h3-new2{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+.animation-add{
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+#Project{
+  padding:  15% 10%;
+  background-color: #2B2C28;
+}
+
+.bg-new{
+  background-color:  #2B2C28;
+
+}
+
+.h3-new{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+}
+#features{
+  padding: 20% 15%;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+
+}
+.demo{
+
+}
+
+.demo2{
+  
+}
+
+
+.card-col{
+  padding: 3% 2%;
+}
+.visibleOff{
+  visibility: hidden;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0;
+    width: 100%;
+  }
+}

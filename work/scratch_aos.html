@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Aos from scratch</title>
+
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+    <!-- place for font awesome-->
+    <script src="https://kit.fontawesome.com/8fedbb90c1.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        transition: 1s;
+    }
+
+    /* different colors */
+
+    .light {
+        color: rgb(53, 53, 53);
+    }
+
+    .dark {
+        color: rgb(200, 200, 200);
+    }
+
+
+    /* font size */
+
+    .page_1>.content>.row>.wick>p {
+        font-size: 90px;
+    }
+
+    .page_2>.about>h1 {
+        font-size: 90px;
+    }
+
+
+
+
+    html,
+    body {
+        height: 100%;
+        font-family: 'Black Ops One', cursive;
+    }
+
+    /* intro */
+    .intro
+    {
+        position:fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(145deg, rgb(32, 32, 32), black);
+        color: white;
+        text-align: center;
+        padding: 200px;
+        z-index: 5;
+        transition: 5s;
+    }
+
+    /* page 1 */
+
+    .page_1 {
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(145deg, white, #3b3b3b);
+    }
+
+    .content {
+        padding-top: 10%;
+        margin: auto;
+        width: 60%;
+    }
+
+    .wick {
+        border: 1px solid rgb(53, 53, 53);
+        border-width: 0px 0px 0px 5px
+    }
+
+    .line {
+        width: 60%;
+        height: 5px;
+        background-color: rgb(53, 53, 53);
+    }
+
+    .wick_full {
+        height: 10%;
+        width: auto;
+    }
+
+    .oval {
+        border-radius: 20px;
+        background-image: linear-gradient(145deg, white, #3b3b3b);
+        padding: 40px;
+    }
+
+    .icons {
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 50%;
+        border: 1px solid rgb(53, 53, 53);
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .icons:hover {
+        border: 0px solid rgb(53, 53, 53);
+        background-image: linear-gradient(145deg, white, #3b3b3b);
+    }
+
+    .icon_cont {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* page 2*/
+
+    .page_2 {
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(145deg, rgb(53, 53, 53), rgb(0, 0, 0));
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .about {
+        margin: auto;
+        width: 60%;
+        height: auto;
+        padding-top: 10%;
+    }
+    /* askew transitions */
+
+    #main_name
+    {
+        transform: rotateZ(145deg);
+        transform-origin: 10% 10%;
+        transition: 1s;
+    }
+
+    #about_wick {
+        transform: rotateZ(45deg);
+        transform-origin: 10% 10%;
+        transition: 1s;
+    }
+
+    #wick_image
+    {
+        transform: rotateZ(100deg);
+        transform-origin: 50% 50%;
+        transition: 1s;
+    }
+
+    #icon_bar
+    {
+        transform: rotateZ(300deg);
+        transform-origin: 10% 50%;
+        transition: 0.5s;  
+    }
+
+    #ic_line
+    {
+        transform: rotateZ(300deg);
+        transform-origin: 0% 50%;
+        transition: 0.5s; 
+        
+    }
+
+    #here_i_am
+    {
+        transform: rotateZ(40deg);
+        transform-origin: 70% 70%;
+        transition: 1s; 
+        
+    }
+
+    #wick_cont
+    {
+        transform: rotateZ(40deg);
+        transform-origin:50% 50%;
+        transition: 0.5s; 
+        
+    }
+    
+
+    /* boxes */
+
+    .container {
+        height: 200px;
+        width: 200px;
+        background-image: linear-gradient(100deg, rgb(53, 53, 53), rgb(0, 0, 0));
+        box-shadow: 1px 1px 10px white, -1px -1px -10px black;
+        border-radius: 20px;
+        transform: rotate(45deg);
+    }
+
+    .page_2_text {
+        height: 100px;
+        width: 100px;
+        background-image: linear-gradient(100deg, rgb(53, 53, 53), rgb(0, 0, 0));
+        box-shadow: 1px 1px 10px white, -1px -1px -10px black;
+    }
+</style>
+
+<body>
+
+
+    <div id="splash" class="intro" align='center'>
+
+        <h1>If you're on the path you're meant to be on, everything falls into place; the Universe is telling you that.</h1>
+        <p>James Van Praagh</p>
+
+    </div>
+
+
+    <div class="page_1 light">
+
+        <div class="content">
+
+            <div class="row">
+                <div class="col-sm-1 col-xs-1"></div>
+                <div class="col-sm-4 col-xs-4">
+                    <img id="wick_image" class="wick_full" src="./img/wick-ConvertImage-removebg-preview.png" alt="" srcset=""
+                        style="height: 400px;">
+                </div>
+                <div id="main_name" class="wick col-sm-6 col-xs-6">
+                    <p>I am JOHN WICK</p>
+                </div>
+            </div>
+
+            <br><br>
+
+
+
+            <div id="icon_bar" class="row">
+                <div class="icon_cont col-sm-4" align='center'>
+                    <i class="icons fab fa-facebook-f"></i>
+                </div>
+                <div class="icon_cont col-sm-4" align='center'>
+                    <i class="icons fab fa-instagram"></i>
+                </div>
+                <div class="icon_cont col-sm-4" align='center'>
+                    <i class="icons fab fa-linkedin-in"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="ic_line" class="line" style="margin: auto;">
+
+        </div>
+
+
+
+    </div>
+
+    <div class="page_2 dark">
+
+        <br>
+        <div class="about" align='center'>
+            <h2 id="here_i_am">So Here I am</h2>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis odio maiores voluptas quidem consectetur voluptatibus excepturi cupiditate modi, distinctio at, accusamus fugiat voluptatem nam magnam! Rem esse error vitae corporis!</p> -->
+
+            <br>
+            <br>
+            <br>
+
+            <div id="wick_cont" class="container">
+
+
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div id="about_wick" class="inner">
+                <h3>Wick</h3>
+                <div class="line" style="background-color: rgb(200, 200, 200);"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam saepe blanditiis in itaque
+                    exercitationem, mollitia ut minima aut est nemo dicta officia at eveniet iusto. Blanditiis sequi
+                    quia a.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        function isElementOutViewport(el) {
+            el = document.getElementById(el);
+            var rect = el.getBoundingClientRect();
+            console.log(rect);
+            return rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight;
+        }
+    </script>
+
+    <script>
+        function handle_left(element, askew) {
+            // about_wick of page 2 handling
+            if (isElementOutViewport(element)) {
+                // element is out of view, so just make it askew
+                document.getElementById(element).style.transform = `rotateZ(${askew}deg)`;
+                console.log('falling back ')
+
+            } else {
+                // it is in view port
+                document.getElementById(element).style.transform = 'rotateZ(0deg)';
+            }
+        }
+    </script>
+
+    <script>
+        // intro handling
+
+        console.log('handling intro');
+        setTimeout(
+            function remove_class()
+            {
+                document.getElementById('splash').style.opacity = '0';
+                setTimeout(
+                    function reduce_opacity()
+                    {
+                        document.getElementById('splash').style.display = 'none';
+                    }, 5000
+                )
+
+                
+
+            }, 5000
+        )
+    </script>
+
+    <script>
+        setInterval(
+            function check_vis() {
+                console.log('checking');
+
+                // handling askews
+
+                setTimeout(
+                    handle_left('about_wick', 45), 1000
+                );
+
+                setTimeout(
+                    handle_left('main_name', 145), 1000
+                );
+
+                setTimeout(
+                    handle_left('wick_image', 100), 1000
+                );
+
+                setTimeout(
+                    handle_left('icon_bar', 300), 1000
+                );
+
+                setTimeout(
+                    handle_left('ic_line', 300), 1000
+                );
+
+                setTimeout(
+                    handle_left('here_i_am', 40), 1000
+                );
+
+                setTimeout(
+                    handle_left('wick_cont', 40), 1000
+                );
+                
+
+
+            },
+            1000
+        )
+    </script>
+</body>
+
+</html>

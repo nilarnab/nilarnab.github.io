@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Code+Pro:wght@200&display=swap"
+        rel="stylesheet"> -->
+
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<style>
+    * {
+        transition: 0.5s;
+    }
+
+    html,
+    body {
+        height: 100%;
+        padding: 0;
+        margin: 0px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    .basic {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .front
+    {
+        margin-top: 20%;
+        
+    }
+
+    .image {
+        /*background-image: url(./img/guns.jpg);*/
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        z-index: 5;
+    }
+
+    
+
+    .slide1 {
+        z-index: 6;
+        background-image: linear-gradient(rgb(114, 114, 114), black);
+        color: whitesmoke;
+        opacity: 1;
+
+    }
+
+    .slide2 {
+        z-index: 1;
+        background-color: blue;
+    }
+
+    .slide3 {
+        z-index: 2;
+        background-color: black;
+
+    }
+
+    .slide4 {
+        z-index: 3;
+        background-color: green;
+
+    }
+
+    .slide5 {
+        z-index: 4;
+        background-color: green;
+
+    }
+
+    .text {
+        margin-top: 20%;
+        font-size: 40px;
+    }
+
+    .main {
+        transition: 0s;
+    }
+
+    .line {
+        width: 80%;
+        height: 1px;
+        background-color: white;
+        box-shadow: 0px 0px 5px rgb(146, 142, 142),
+            -0px -0px 5px rgb(110, 110, 110);
+        transition: 0.5s;
+    }
+
+
+    .buttons {
+        position: absolute;
+        left: 20px;
+        top: 30%;
+        z-index: 10000;
+        border-width: 0;
+
+    }
+
+    #body {
+        transition: 0.3s;
+    }
+
+    #marker:hover
+    {
+        transform: scale(2);
+    }
+</style>
+
+
+<style>
+    /* neumorphism */
+
+    .oval {
+        color: white;
+        text-shadow: 0px 0px 5px white;
+        width: 50px;
+        height: 50px;
+        border-width: 0px;
+        background-color: rgb(63, 63, 63, 0);
+        margin-top: 20px;
+    }
+
+    .oval:hover
+    {
+        transform: scale(2);
+    }
+
+</style>
+
+
+
+
+
+<body id="body">
+
+    <div class="buttons">
+        <button class="btn2 oval" onclick="change('slide2')">2 <span id="marker_slide2"><</span></button><br>
+        <button class="btn1 oval" onclick="change('slide1')">1 <span id="marker_slide1"><</span></button><br>
+        <button class="btn3 oval" onclick="change('slide3')">3 <span id="marker_slide3"><</span></button><br>
+        <button class="btn4 oval" onclick="change('slide4')">4 <span id="marker_slide4"><</span></button><br>
+        <button class="btn5 oval" onclick="change('slide5')">5 <span id="marker_slide5"><</span></button>
+
+    </div>
+
+
+    <div id="background" class="image basic">
+
+
+    </div>
+
+
+
+
+    <div id="frame" class="main">
+
+
+        <div id="slide1" class="slide1 basic">
+            
+
+            <div class="row front" align='center' style="width: 40%;">
+                <div class="col-sm-6 wick" align='center'>
+                    <img src="./img/wick.png" alt="" style="height: 400px;">
+                </div>
+                <div class="col-sm-6" align='center'>
+                    I AM JOHN WICK
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div id="slide2" class="slide2 basic">
+            <div class="text" align='center'>This is slide 2</div>
+        </div>
+
+        <div id="slide3" class="slide3 basic">
+            <div class="text" align='center'>This is slide 3</div>
+        </div>
+
+        <div id="slide4" class="slide4 basic">
+            <div class="text" align='center'>This is slide 4</div>
+        </div>
+
+        <div id="slide5" class="slide5 basic">
+            <div class="text" align='center'>This is slide 5</div>
+        </div>
+
+    </div>
+
+    <script>
+        var val = 10;
+
+        function change(slide) {
+
+            val += 1;
+
+            console.log('This function has been called  with ' + slide + ' top now ' + (val + 1));
+
+            // document.getElementById('background').style.opacity = '0';
+            document.getElementById('body').style.opacity = '0';
+
+
+
+            // bringing in orginal state
+            if (slide == 'slide1') {
+                document.getElementById("line1").style.width = '0px';
+            }
+
+
+            // make all other slides opacity 0
+            handle_op(slide);
+            handle_marker(slide);
+
+
+
+            setTimeout(
+                function () {
+
+                    document.getElementById(slide).style.zIndex = 4 * val;
+                    document.getElementById('background').style.zIndex = val;
+
+                    console.log('slide in position');
+
+
+                    setTimeout(
+                        function () {
+
+                            setTimeout(
+                                function () {
+                                    if (slide == 'slide1') {
+                                        animate_slide1();
+
+                                    }
+                                }, 600
+                            );
+
+                            document.getElementById('body').style.opacity = '1';
+                            console.log('bringing back body');
+                        }, 100
+                    )
+
+                }, 250
+            )
+        }
+    </script>
+
+
+    <script>
+        // special script for slide 1
+
+        handle_marker('slide1');
+
+        function animate_slide1() {
+            console.log("Animating slide 1");
+
+            document.getElementById("line1").style.width = '80%';
+
+        }
+
+        function handle_op(slide) {
+            console.log('handling opacity');
+            document.getElementById('slide1').style.opacity = '0';
+            document.getElementById('slide2').style.opacity = '0';
+            document.getElementById('slide3').style.opacity = '0';
+            document.getElementById('slide4').style.opacity = '0';
+            document.getElementById('slide5').style.opacity = '0';
+
+            document.getElementById(slide).style.opacity = '0.8';
+        }
+
+        function handle_marker(slide)
+        {
+            console.log('handling marker');
+            document.getElementById('marker_slide1').style.opacity = '0';
+            document.getElementById('marker_slide2').style.opacity = '0';
+            document.getElementById('marker_slide3').style.opacity = '0';
+            document.getElementById('marker_slide4').style.opacity = '0';
+            document.getElementById('marker_slide5').style.opacity = '0';
+            
+
+            document.getElementById('marker_' + slide).style.opacity = '1';
+        }
+
+    </script>
+
+</body>
+
+</html>
