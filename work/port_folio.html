@@ -22,7 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    
+
 
 </head>
 
@@ -39,96 +39,194 @@
         height: 100%;
     }
 
-    .slide1 {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-        background-color: #FFFAFB;
-        opacity: 0.1;
-        background-image: url(./img/grid.jpg);
-        background-position: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
+    @media only screen and (min-width: 600px) {
+
+
+
+        .slide1 {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-color: #FFFAFB;
+            opacity: 0.1;
+            background-image: url(./img/grid.jpg);
+            background-position: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .slide2 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .slide3 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .frame {
+            overflow: hidden;
+        }
+
+        .head1 {
+            font-size: 50px;
+            position: fixed;
+            text-align: center;
+            bottom: 50%;
+            left: 25%;
+            color: #2B2C28;
+
+        }
+
+        .head2 {
+            font-size: 60px;
+            position: fixed;
+            text-align: center;
+            bottom: 40%;
+            left: 35%;
+            color: #2B2C28;
+
+        }
+
+        .gap {
+            height: 100%;
+        }
+
+        /* PROJECT */
+
+        .slide3_container {
+            width: 60%;
+            margin: auto;
+        }
+
+        /* line */
+        .line {
+            height: 1px;
+            width: 100%;
+            background-color: #2B2C28;
+        }
+
+        /* SLIDE 3 */
+
+        .projects {
+            padding: 0%;
+        }
+
+        .cards {
+            width: auto;
+            height: auto;
+            border: 1 solid #2B2C28;
+            border-radius: 20px;
+        }
+
+        /* CONTACTS */
+        .contacts {
+            margin-top: 50%;
+            transition: 4s;
+        }
     }
 
-    .slide2 {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
+    @media only screen and (max-width: 600px) {
+
+        .slide1 {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-color: #FFFAFB;
+            opacity: 0.1;
+            background-image: url(./img/grid.jpg);
+            background-position: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .slide2 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .slide3 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .frame {
+            overflow: hidden;
+        }
+
+        .head1 {
+            font-size: 20px;
+            position: fixed;
+            text-align: center;
+            bottom: 50%;
+            left: 25%;
+            color: #2B2C28;
+
+        }
+
+        .head2 {
+            font-size: 30px;
+            position: fixed;
+            text-align: center;
+            bottom: 40%;
+            left: 35%;
+            color: #2B2C28;
+
+        }
+
+        .gap {
+            height: 100%;
+        }
+
+        /* PROJECT */
+
+        .slide3_container {
+            width: 80%;
+            margin: auto;
+        }
+
+        /* line */
+        .line {
+            height: 1px;
+            width: 100%;
+            background-color: #2B2C28;
+        }
+
+        /* SLIDE 3 */
+
+        .projects {
+            padding: 0%;
+        }
+
+        .cards {
+            width: auto;
+            height: auto;
+            border: 1 solid #2B2C28;
+            border-radius: 20px;
+        }
+
+        /* CONTACTS */
+        .contacts {
+            margin-top: 50%;
+            transition: 4s;
+        }
+
+
     }
-
-    .slide3 {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-    }
-
-    .frame {
-        overflow: hidden;
-    }
-
-    .head1 {
-        font-size: 50px;
-        position: fixed;
-        text-align: center;
-        bottom: 50%;
-        left: 25%;
-        color: #2B2C28;
-
-    }
-
-    .head2 {
-        font-size: 60px;
-        position: fixed;
-        text-align: center;
-        bottom: 40%;
-        left: 35%;
-        color: #2B2C28;
-
-    }
-
-    .gap {
-        height: 100%;
-    }
-
-    /* PROJECT */
-
-    .slide3_container {
-        width: 60%;
-        margin: auto;
-    }
-
-    /* line */
-    .line {
-        height: 1px;
-        width: 100%;
-        background-color: #2B2C28;
-    }
-
-    /* SLIDE 3 */
-
-    .projects {
-        padding: 0%;
-    }
-
-    .cards {
-        width: auto;
-        height: auto;
-        border: 1 solid #2B2C28;
-        border-radius: 20px;
-    }
-
-    /* CONTACTS */
-    .contacts
-    {
-        margin-top: 50%;
-        transition: 4s;
-    }
-
 </style>
 
 <body>
@@ -216,10 +314,10 @@
                         <p>I am NILARNAB DEBNATH</p>
                         <p>8529734928</p>
                         <p>nilarnabdebnath@gmail.com</p>
-    
+
                     </div>
 
-                    
+
 
                 </div>
             </div>
@@ -293,7 +391,6 @@
     </div>
 
     <script>
-
         function isElementOutViewport(el) {
             el = document.getElementById(el);
             var rect = el.getBoundingClientRect();
@@ -306,7 +403,9 @@
         canvas_rotation_complete = false;
 
         var width = window.innerWidth;
-        
+
+        console.log("width value  " + width);
+
 
         function heading_change(revert) {
             if (!revert) {
@@ -316,10 +415,19 @@
                     document.getElementById('heading1').style.transform = "rotate(90deg)";
                     document.getElementById('heading2').style.transform = "rotate(-90deg)";
 
+
+
                     setTimeout(function () {
                         console.log('moving left heading 1');
-                        document.getElementById('heading1').style.left = "5px";
-                        document.getElementById('heading2').style.left = (width * 0.8) + "px";
+
+                        if (width > 600) {
+                            document.getElementById('heading1').style.left = "5px";
+                            document.getElementById('heading2').style.left = (width - 280) + "px";
+                        } else {
+                            document.getElementById('heading1').style.opacity = '0';
+                            document.getElementById('heading2').style.opacity = '0';
+                        }
+
                         // document.getElementById('heading1').style.bottom = "0px";
                         document.getElementById('canvas').style.transform = 'scale(2, 2)';
 
@@ -347,6 +455,9 @@
                         document.getElementById('heading1').style.transform = "rotate(0deg)";
                         document.getElementById('heading2').style.transform = "rotate(0deg)";
                         document.getElementById('canvas').style.transform = 'scale(1, 1)';
+
+                        document.getElementById('heading1').style.opacity = '1';
+                        document.getElementById('heading2').style.opacity = '1';
                     }, 200);
 
                     // document.getElementById('canvas').style.transform = 'rotate(0deg)';
@@ -368,10 +479,7 @@
                     document.getElementById("canvas").style.transform = 'rotate(90deg)';
                     canvas_rotation_complete = true;
                 }
-            }
-
-            else
-            {
+            } else {
                 if (canvas_rotation_complete) {
                     console.log('reverting rotation');
                     document.getElementById("canvas").style.transform = 'rotate(90deg)';
@@ -407,18 +515,14 @@
 
                 }
 
-                if (!isElementOutViewport('cntcts'))
-                {
+                if (!isElementOutViewport('cntcts')) {
                     document.getElementById('cntcts').style.transform = 'scale(1.2, 1.2)';
                     document.getElementById('canvas').style.backgroundImage = 'url(./img/grid_inverted.jpg)';
                     document.body.style.backgroundColor = 'black';
                     document.getElementById('cntcts').style.color = 'white';
                     document.getElementById('heading1').style.color = 'white';
                     document.getElementById('heading2').style.color = 'white';
-                }
-
-                else
-                {
+                } else {
                     document.getElementById('cntcts').style.transform = 'scale(1, 1)';
                     document.getElementById('canvas').style.backgroundImage = 'url(./img/grid.jpg)';
                     document.body.style.backgroundColor = '#FFFAFB';
@@ -431,9 +535,8 @@
             200
         )
 
-    
-    AOS.init();
-    
+
+        AOS.init();
     </script>
 
 
