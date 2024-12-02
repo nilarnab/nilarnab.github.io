@@ -67,15 +67,11 @@
 
         .text {
             height: 500px;
-            width: auto;
+            width: 100px;
             position: fixed;
             color: white;
             top: 20%;
             left: 40%;
-            /* Flexbox properties */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Align items vertically */
         }
 
         #value {
@@ -285,16 +281,8 @@
                 width: 100px;
                 position: fixed;
                 color: white;
-                 /* Centering */
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-
-                /* Flexbox properties */
-                display: flex;
-                flex-direction: column;
-                justify-content: center; /* Align items vertically */
-                align-items: center;    /* Aligns horizontally */
+                top: 30%;
+                left: 30%;
             }
 
 
@@ -356,7 +344,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#me">About</a>
         <a href="#skls">Technical Skills</a>
-        <a href="#acheive">Achievements</a>
+        <a href="#acheive">Achievement</a>
         <a href="#internships">Internships</a>
         <a href="#projects">Projects</a>
 
@@ -374,8 +362,7 @@
         </div>
 
         <div id="text" class="text">
-            <h1 id="text_h">Hi..!</h1>
-            <p id="text_p" style="padding-left: 20px;">Scroll Down</p>
+            <h1 id="text_h">HE<br>LLO</h1>
         </div>
 
     </div>
@@ -391,7 +378,7 @@
         <div class="about" align='center'>
             <h1>HELLO WORLD! I am Nilarnab</h1>
             
-            <a href="resources/Resume - Nilarnab Debnath.pdf" class="btn btn-primary" target="_blank">Resume</a>
+            <a href="resources/soft Resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
             <br>
             <br>
             <div id="line_resp">
@@ -400,8 +387,8 @@
             <br>
 
             <p>
-                
-I am a Computer Science engineer with a strong foundation in software development and a passion for creating innovative solutions. My research explores multilingual question-answering systems and advanced emotion-based AI, combining academic curiosity with practical problem-solving.
+                I am a young developer with a dynamic personality and a passion for learning. My area of work includes implementation of various web designing trends, working in server side, backend development with php, python and work with object detection with custom trained YOLO models. I am always looking forward to learn more and explore in the process
+
             </p>
         </div>
 
@@ -492,7 +479,7 @@ I am a Computer Science engineer with a strong foundation in software developmen
 
         <div id='acheive' class="internships">
 
-            <h1 align=center>ACHIEVEMENTS</h1>
+            <h1 align=center>ACHIEVMENT</h1>
             <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
                 style="width: 60%; margin: auto;"></div>
             <br>
@@ -504,27 +491,6 @@ I am a Computer Science engineer with a strong foundation in software developmen
 
             <div class="gap" style="height: 50px;"></div>
 
-            <div class="proj_text" data-aos="fade-up">
-                <h1>
-                    Secured First position in Customer-Centric Hackathon by Salesforce
-                </h1>
-
-                <div class="line_bar" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500"
-                    style="width: 60%;"></div>
-                <br>
-
-                <ul>
-                    <li>Designed and implemented a grievance-aware AI-based adaptive feedback system.</li>
-                    <li>Categorized grievances using Einstein GPT embeddings and used Agglomerative Clustering algorithm.</li>
-                    <li>Allowed a plug-and-play model with Slack API to set sources of grievances to any channel easily.</li>
-                    <li>Implemented adaptive prioritization of questions to get the most insight from partial responses from customers.</li>
-                    <li>Used Einstein-LLM to dynamically generate questions from the grievance categories.</li>
-                    <li>Leveraged Lightning Components to make the solution compatible with Salesforce architecture.</li>
-                </ul>
-            </div>
-
-            <div class="gap" style="height: 50px;"></div>
-            
             <div class="proj_text" data-aos="fade-up">
                 <h1>
                     Secured 2nd position
@@ -907,11 +873,10 @@ I am a Computer Science engineer with a strong foundation in software developmen
 
         var val = screen.height;
         var width = screen.width;
-        var prev_p_val = '16px'
+        
         if (width > 600)
         {
             var prev_val = '200px';
-            
         }
         else
         {
@@ -929,7 +894,6 @@ I am a Computer Science engineer with a strong foundation in software developmen
                 document.getElementById("slide1").style.width = '100%';
                 document.getElementById("block").style.height = '500px';
                 document.getElementById("text_h").style.fontSize = prev_val;
-                document.getElementById("text_p").style.fontSize = prev_p_val;
                 document.getElementById("text").style.opacity = '1';
                 document.getElementById("me").style.opacity = '0';
                 document.body.style.color = 'white';
@@ -943,7 +907,6 @@ I am a Computer Science engineer with a strong foundation in software developmen
                 // document.getElementById("slide1").style.backgroundColor = "white";
                 document.getElementById("block").style.height = '0px';
                 document.getElementById("text_h").style.fontSize = '0px';
-                document.getElementById("text_p").style.fontSize = '0px';
                 document.getElementById("slide1").style.width = '0%';
                 document.getElementById("me").style.opacity = '1';
                 document.body.style.color = 'rgb(39, 102, 120)';
