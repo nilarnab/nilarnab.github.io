@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nilarnab Debnath's software engineering, machine learning research, publications, and projects.">
+    <title>Nilarnab Debnath — Software Engineering &amp; Research</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../site.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="#top">Nilarnab Debnath</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#professional-experience">Professional experience</a>
+                <a href="#publications">Publications</a>
+                <a href="#research-projects">Research projects</a>
+                <a href="#other-projects">Other projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top" class="page-shell">
+        <section class="hero" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">MS Computer Science at NYU · Software engineer · Machine learning researcher</p>
+                <h1 id="page-title">HELLO WORLD! I am Nilarnab <span class="title-aside">or just call me Nil!</span></h1>
+                <p class="intro">I am an ex-Software Development Engineer II (SDE2) at Salesforce, where I contributed to building scalable and reliable software solutions. My research interests lie in developing emotionally intelligent agents, improving LLM-based reasoning, and bridging the gap between human emotions and artificial intelligence to create systems that interact more naturally and intuitively with people. With a strong foundation in software development and a passion for advancing AI, I aim to combine practical experience with innovative research to solve real-world problems.</p>
+                <div class="quick-links">
+                    <a href="mailto:nd3032@nyu.edu">Email</a><a href="https://docs.google.com/document/d/15viTeBZF3rQPe6C9HELBF270UnAmMl5U2P1V6OaboZo/edit" target="_blank" rel="noreferrer">Resume</a><a href="https://dblp.org/pid/376/2415.html" target="_blank" rel="noreferrer">DBLP</a><a href="https://github.com/Nilarnab/" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/NilarnabDebnath" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <div class="portrait-frame"><img src="../modernUi/img/nilarnab_d.jpg" alt="Portrait of Nilarnab Debnath"></div>
+        </section>
+
+        <section class="content-section" id="professional-experience">
+            <div class="section-heading"><p class="section-label">01 · Industry</p><h2>Professional experience</h2></div>
+            <div class="entry-list">
+                <article class="entry"><div class="entry-meta"><span>Software Developer Summer Intern · Salesforce, San Francisco</span><time>May 2026 — Aug 2026</time></div><h3>Data pipeline observability enhancements</h3><p>Supported a multi-million-dollar internal cost-savings migration by building a downstream-outage-resilient, backfill-capable Apache Airflow pipeline. Enabled a one-year metadata backfill in about 57 minutes, created a unified Grafana dashboard, and automated monthly log-type analysis.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Software Developer Summer Intern · Salesforce, San Francisco</span><time>May 2026 — Aug 2026</time></div><h3>Support agent for engineering teams</h3><p>Built a Mastra-based multi-agent support system for 56+ weekly active customers. The Slack agent used 19 MCP tools and 45+ runbooks to query documentation and live systems, reducing responses from a 24-hour human turnaround to 1–2 minutes with a 70% resolution rate.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Member of Technical Staff (SDE II) · Salesforce India</span><time>Jul 2023 — Aug 2025</time></div><h3>Application performance monitoring with OpenTelemetry</h3><p>Extended observability to 35+ Python services across 30+ regions on AWS, GCP, and Salesforce infrastructure. Built Salesforce-specific span ingestion and a custom metrics API adopted by 5+ teams.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Salesforce India · SDE II project</span><time>2023 — 2025</time></div><h3>CloudWatch log exporter service</h3><p>Built a hosted service that streamed, processed, and exported CloudWatch logs through a centralized AWS Kinesis stream to Salesforce's monitoring backend. Automated AWS resource provisioning and service deployment with Terraform and Spinnaker.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Salesforce India · SDE II project</span><time>2023 — 2025</time></div><h3>Government cloud compatibility for the CloudWatch log exporter</h3><p>Resolved AWS ARN naming differences that blocked the exporter in government clouds and updated Helm and Spinnaker configuration to support government-cloud deployments without customer-side changes.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Salesforce TMP Hackathon · First place out of 128 teams</span><time>2024</time></div><h3>Grievance-aware AI adaptive feedback system</h3><p>Clustered customer grievances from 5+ channels using Einstein GPT embeddings and agglomerative clustering, then adaptively prioritized follow-up questions to maximize insight from partial survey responses.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Software Developer Summer Intern · Salesforce India</span><time>Jun 2022 — Aug 2022</time></div><h3>Dead-letter queue for a telemetry handler</h3><p>Identified 20+ failure-prone call sites in a Spring Boot Kafka ingress service and built an AWS SQS retry pipeline. Exponential backoff made telemetry processing resilient to 14 days of downstream outages and improved auditing of unretryable requests.</p></article>
+                <article class="entry"><div class="entry-meta"><span>Software Developer Summer Intern · PillarPlus</span><time>May 2020 — Jul 2020</time></div><h3>Architectural design automation</h3><p>Automated plan and elevation drawing generation for 25+ object types using Python, NumPy, ezdxf, and Django. Automated detection processed more than 1,000 drawing blocks per second.</p></article>
+            </div>
+        </section>
+
+        <section class="content-section" id="publications">
+            <div class="section-heading"><p class="section-label">02 · Writing</p><h2>Publications</h2></div>
+            <div class="entry-list">
+                <article class="entry"><div class="entry-meta"><span>Neurocomputing, Volume 588, Article 127623</span><time>2024</time></div><h3>A visual question and answering system with support for compound emotions using facial landmark identification with MediaPipe and CNN classifier</h3><p>Lavika Goel, <strong>Nilarnab Debnath</strong>, and Sanskar Mundaniya.</p><p>The paper extends visual question answering to questions about facial emotion. The system combines attention-based image captioning with RetinaFace and DeepFace for face and basic-emotion detection, then uses MediaPipe facial landmarks and a CNN to recognize compound emotions before answering questions with BERT. Its modular design allows the captioning and question-answering components to be trained independently.</p><div class="entry-links"><a href="https://doi.org/10.1016/j.neucom.2024.127623" target="_blank" rel="noreferrer">Paper</a><a href="https://dblp.org/rec/journals/ijon/GoelDM24" target="_blank" rel="noreferrer">DBLP</a><a href="https://github.com/nilarnab/emotion_based_qa" target="_blank" rel="noreferrer">GitHub</a></div></article>
+            </div>
+        </section>
+
+        <section class="content-section" id="research-projects">
+            <div class="section-heading"><p class="section-label">03 · Research</p><h2>Research projects</h2></div>
+            <div class="entry-list">
+                <article class="entry"><div class="entry-meta"><span>Qwen2.5 · GSM8K · SFT · GRPO</span><time>Current research</time></div><h3>Prompt Invariant Training for robust mathematical reasoning</h3><p>Developed a post-training framework that makes LLM mathematical reasoning less sensitive to irrelevant or adversarial changes in a prompt. Used GPT-OSS to incrementally inject noise into GSM8K questions, then trained Qwen2.5-1.5B-Instruct with original reasoning traces and adversarial examples using supervised fine-tuning and GRPO.</p><p>Improved adversarial accuracy from 21.6% at baseline to 31.3% with SFT and 41.6% with GRPO. GRPO also increased clean reasoning accuracy from 65.7% to 80.2%, outperforming standard SFT at 58.8%.</p></article>
+                <article class="entry"><div class="entry-meta"><span>TinyLlama · Supervised fine-tuning</span><time>Research project</time></div><h3>Personalized language generation by mimicking an individual's writing style</h3><p>Fine-tuned the 1.1B-parameter TinyLlama model on labeled conversational data collected from a target person's Discord messages to reproduce their speech style. Continued fine-tuning on OpenThoughts-114K to add basic mathematical reasoning ability.</p><div class="entry-links"><a href="https://github.com/nilarnab/small-llm-text-generator" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>Bilingual question answering · MNIT Jaipur</span><time>Undergraduate research</time></div><h3>Known-question retrieval using Siamese networks, XGBoost, and DistilBERT</h3><p>Developed a bilingual system that first retrieved answers from known question pairs and then fell back to DistilBERT. The paraphrase-identification stage achieved 75% accuracy in English using a Siamese neural network and 95% in Bengali using XGBoost.</p></article>
+            </div>
+        </section>
+
+        <section class="content-section" id="other-projects">
+            <div class="section-heading"><p class="section-label">04 · Projects</p><h2>Other projects</h2></div>
+            <div class="entry-list">
+                <article class="entry"><div class="entry-meta"><span>Python · React · Express · Generative AI</span><time>Recent project</time></div><h3>Autonomous text-to-short-video generator and publisher</h3><p>Built a checkpointed pipeline that scripts, renders, and publishes videos to Instagram and YouTube using DeepSeek and Stable Diffusion. Averaged more than 1,000 views per video and reduced generation costs by 70% through independently retryable stages.</p><div class="entry-links"><a href="https://github.com/nilarnab/intelligent-storyteller" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>React Native · Express · Video streaming</span><time>Academic project</time></div><h3>Video-streaming e-commerce application</h3><p>Developed a cross-platform shopping app with adaptive HTTP streaming, MinIO object storage, Meilisearch, Firebase authentication and geolocation, Apache API routing, and Razorpay payments. The project received one year of funding from the college innovation and incubation center.</p><div class="entry-links"><a href="https://github.com/nilarnab/buyBold_ReactNative" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>Python · Firebase · Security demonstration</span><time>Academic project</time></div><h3>Keylogger and real-time security vulnerability demonstration</h3><p>Demonstrated a vulnerability on campus Windows systems with a Python keylogger connected to Firebase Realtime Database. The work helped faculty identify and improve weaknesses in system safeguards.</p><div class="entry-links"><a href="https://github.com/nilarnab/malware_key_listener" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>Laravel · PHP · MySQL · Ajax</span><time>Academic project</time></div><h3>Hostel management website</h3><p>Automated room administration, mess menus, and food-supply management with Laravel authentication, a MySQL backend, and asynchronous Ajax updates.</p><div class="entry-links"><a href="https://github.com/nilarnab/hostel_manage" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>PHP · MySQL · Ajax · FPDF</span><time>Community project</time></div><h3>HR work automator and event assistant</h3><p>Built attendance tracking, role-based access, event email alerts, fundraiser records, and automatic certificate generation for Hope of People Everywhere.</p><div class="entry-links"><a href="https://github.com/nilarnab/Hope_technical" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>YOLO · Python · PyAutoGUI</span></div><h3>Gesture-based YouTube control</h3><p>Trained a finger-detection model with 99.5% accuracy and mapped detected gestures to keyboard actions, creating a touch-free media control interface.</p><div class="entry-links"><a href="https://www.youtube.com/watch?v=0T715ih4DeA" target="_blank" rel="noreferrer">Video</a><a href="https://github.com/nilarnab/yolo_gaming_console" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>YOLO · Python · Telescope imagery</span></div><h3>Lunar feature identification</h3><p>Trained a YOLO model to detect the Moon and its craters from telescope imagery relayed through a mobile camera, reaching 92% accuracy in practical tests across different telescope apertures.</p><div class="entry-links"><a href="https://www.youtube.com/watch?v=COyEhwP7C-c" target="_blank" rel="noreferrer">Video</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>Python · Automation</span><time>Open source</time></div><h3>COVID-19 vaccination slot notifier</h3><p>Automated checks against India's Setu API and alerted users when matching vaccination appointments became available, replacing repeated manual searches.</p><div class="entry-links"><a href="https://github.com/nilarnab/vaccine_18plus_slot_detector" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>PHP · Ajax · Logic programming</span><time>Academic project</time></div><h3>CNF resolution engine</h3><p>Created a web application that recursively derives the resolution of premises expressed in conjunctive normal form and displays each result without reloading the page.</p><div class="entry-links"><a href="https://github.com/nilarnab/resolution_engine" target="_blank" rel="noreferrer">GitHub</a></div></article>
+                <article class="entry"><div class="entry-meta"><span>Python · scikit-learn · pandas</span><time>Academic project</time></div><h3>Iris dataset classification</h3><p>Preprocessed the Iris dataset with pandas and NumPy and implemented a k-nearest-neighbors classifier using scikit-learn.</p></article>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer page-shell"><p>© 2026 Nilarnab Debnath</p><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
